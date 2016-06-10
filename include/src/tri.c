@@ -4,16 +4,15 @@
 //Struktur til vektorer
 struct TVector {
 	long x,y;
-	long a,b;
 };
 
 //Initialiserer en vektor til (10,20)
-void initVector(struct TVector *v) {
-	v->x = 1 << 14;
-	v->y = 2 << 14;
+void initVector(struct TVector *v, long startX, long startY) {
+	v->x = startX << 14;
+	v->y = startY << 14;
 }
 
-//Printer en vektor pÃ¥ formatet "V=(x,y)
+//Printer en vektor på formatet "V=(x,y)
 void printV(struct TVector *v) {
 	printf("V=(");
 	printFix(expand(v->x));
