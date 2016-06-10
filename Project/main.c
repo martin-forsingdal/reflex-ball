@@ -14,7 +14,7 @@ void timer0int() {
 	flag=0x01;
 }
 
-
+//Hej Henning
 void LEDsetString(char string[]) {
 	char i, j;
 	for(i=0; i < 6; i++) {
