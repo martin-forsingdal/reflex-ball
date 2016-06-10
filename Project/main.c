@@ -4,7 +4,7 @@
 #include "tri.h";
 #include "board.h";
 #include "charset.h";
-//Fuck dig Martin
+
 extern char character_data[95][5];
 char videoBuffer[5][6];
 char flag;
@@ -14,7 +14,7 @@ void timer0int() {
 	flag=0x01;
 }
 
-//Hej Henning
+//Hej Jonas
 void LEDsetString(char string[]) {
 	char i, j;
 	for(i=0; i < 6; i++) {
