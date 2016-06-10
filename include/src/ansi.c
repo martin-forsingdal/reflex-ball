@@ -96,23 +96,20 @@ void reverse(char on) {
 //draws a window starting at "x1,y1" to "x2,y2"
 void window(int x1, int y1, int x2, int y2) {
 	int i, j;
-	char array[8] = {201,187,200,188,205,186,185,204};
+	char array[8] = {201,187,205,186};																																																	
 	gotoxy(x1,y1);
 	printf("%c",array[0]);
 	gotoxy(x2,y1);
 	printf("%c",array[1]);
 	gotoxy(x1,y2);
-	printf("%c",array[2]);
-	gotoxy(x2,y2);
-	printf("%c",array[3]);
 	for(i=x1+1; i<x2; i++) {
 		gotoxy(i,y1);
-		printf("%c",array[4]);
+		printf("%c",array[2]);
 	}
-	for(j=y1+1; j<y2; j++) {
+	for(j=y1+1; j<=y2; j++) {
 		gotoxy(x1,j);
-		printf("%c",array[5]);
+		printf("%c",array[3]);
 		gotoxy(x2,j);
-		printf("%c",array[5]);
+		printf("%c",array[3]);
 	}
 }
