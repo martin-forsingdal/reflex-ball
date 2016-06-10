@@ -8,11 +8,11 @@ struct TVector {
 
 //Initialiserer en vektor til (10,20)
 void initVector(struct TVector *v) {
-	v->x = 1 << 14;
-	v->y = 2 << 14;
+	v->x = 10 << 14;
+	v->y = 20 << 14;
 }
 
-//Printer en vektor pÃ¥ formatet "V=(x,y)
+//Printer en vektor på formatet "V=(x,y)
 void printV(struct TVector *v) {
 	printf("V=(");
 	printFix(expand(v->x));
@@ -23,7 +23,8 @@ void printV(struct TVector *v) {
 
 //returns a sin value for theta
 long sin(int theta) {
-	theta += 0x00ff;
+	theta = ~theta + 0x0001;
+	theta += 0x0100;
 	return SIN[theta & 0x01ff];
 }
 
