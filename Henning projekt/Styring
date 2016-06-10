@@ -1,0 +1,13 @@
+#include "ansi.h"
+#include "tri.h"
+#include "LUT.h"
+#include "board.h"
+#include "charset.h"
+#include "fixpoint.h"
+
+void startBall(){
+  Tvector vector={1,1,25,47};
+  void initVector(&vector);
+  }
+  
+void moveBall(){
