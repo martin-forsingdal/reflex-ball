@@ -93,44 +93,26 @@ void reverse(char on) {
 		printf("%c[%dm",ESC,27);
 }
 
-//draws a window starting at "x1,y1" to "x2,y2" with a specific style and a string in the window title
-void window(int x1, int y1, int x2, int y2,int style, char *str) {
-	int i, j, k=0, n=0;
-	char array[2][8] = {	{201,187,200,188,205,186,185,204},
-						{218,191,192,217,196,179,180,195}	};
-	while(1) {
-		if(str[k]=='\0')
-			break;
-		n++;
-		k++;
-	}
+//draws a window starting at "x1,y1" to "x2,y2"
+void window(int x1, int y1, int x2, int y2) {
+	int i, j;
+	char array[8] = {201,187,200,188,205,186,185,204};
 	gotoxy(x1,y1);
-	printf("%c",array[style][0]);
+	printf("%c",array[0]);
 	gotoxy(x2,y1);
-	printf("%c",array[style][1]);
+	printf("%c",array[1]);
 	gotoxy(x1,y2);
-	printf("%c",array[style][2]);
+	printf("%c",array[2]);
 	gotoxy(x2,y2);
-	printf("%c",array[style][3]);
-	gotoxy(x1+1,y1);
-	printf("%c",array[style][6]);
-	gotoxy(x1+2+n,y1);
-	printf("%c",array[style][7]);
-	reverse('1');
-	gotoxy(x1+2,y1);
-	printf("%s",str);
-	reverse('0');
+	printf("%c",array[3]);
 	for(i=x1+1; i<x2; i++) {
 		gotoxy(i,y1);
-		if(i>x1+2+n)
-		printf("%c",array[style][4]);
-		gotoxy(i,y2);
-		printf("%c",array[style][4]);
+		printf("%c",array[4]);
 	}
 	for(j=y1+1; j<y2; j++) {
 		gotoxy(x1,j);
-		printf("%c",array[style][5]);
+		printf("%c",array[5]);
 		gotoxy(x2,j);
-		printf("%c",array[style][5]);
+		printf("%c",array[5]);
 	}
 }

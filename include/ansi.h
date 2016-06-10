@@ -15,6 +15,6 @@ void gotoxy(int x, int y);
 void underline(char on);
 void blink(char on);
 void reverse(char on);
-void window(int x1, int y1, int x2, int y2,int style, char *str);
+void window(int x1, int y1, int x2, int y2);
 
 #endif // _ANSI_H_

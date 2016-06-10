@@ -14,7 +14,6 @@ void timer0int() {
 	flag=0x01;
 }
 
-//Hej Jonas
 void LEDsetString(char string[]) {
 	char i, j;
 	for(i=0; i < 6; i++) {
@@ -94,7 +93,7 @@ void LEDmoveString(char *string, char n, char m) {
 
 void main() {
 	char n=0,m=5;
-	char s [64]= " Martin søger rimjob-modtager! ";
+	char s [64]= "JAAAAA! ";
 	int x=0;
 
 	//Båndbredde på mikroprossesoren vælges
@@ -121,7 +120,7 @@ void main() {
 				n=0;
 				
 			}
-			if(m==30) {
+			if(m==8) {
 				m=0;
 			}
 		}
