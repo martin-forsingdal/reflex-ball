@@ -6,8 +6,25 @@
 #include "fixpoint.h"
 
 void startBall(){
-  Tvector vector={1,1,25,47};
+  Tvector vector={1,1,25<<14,47<<14}; //virker måske 
   void initVector(&vector);
   }
   
-void moveBall(){
+void moveBall(*Tvector vector){
+  vector->a=vector->a+vector->x;
+  vector->b=vector->b+vector->y;
+  }
+  
+void reflectBallSide(*Tvector vector){
+  vector->x=~vector->x+1;
+}
+
+void reflectBallTop(*Tvector vector){
+  vector->y=~vector->y+1;  
+}
+
+void reflectBallWall(*Tvector vector){
+  if(vector->b>1){
+
+  
+  
