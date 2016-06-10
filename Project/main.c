@@ -4,7 +4,7 @@
 #include "tri.h";
 #include "board.h";
 #include "charset.h";
-
+//Fuck dig Martin
 extern char character_data[95][5];
 char videoBuffer[5][6];
 char flag;
@@ -94,10 +94,10 @@ void LEDmoveString(char *string, char n, char m) {
 
 void main() {
 	char n=0,m=5;
-	char s [64]= " Martin søger rimjob-modtager! ";
+	char s [64]= " Martin sÃ¸ger rimjob-modtager! ";
 	int x=0;
 
-	//Båndbredde på mikroprossesoren vælges
+	//BÃ¥ndbredde pÃ¥ mikroprossesoren vÃ¦lges
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
 	initTimer(0x04, 0x80);
