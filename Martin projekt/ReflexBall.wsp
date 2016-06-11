@@ -510,7 +510,7 @@ ptn_Child1=ViewFrame-0
 DocPathName=.\main.c
 DocTemplateIndex=0
 DocumentString=IDE Document
-IsActiveChildFrame=False
+IsActiveChildFrame=True
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAAOEEAAAAAKGBAAAAA
 
 [WorkState_v1_1.Frames.ChildFrames.Document-2]
@@ -520,11 +520,11 @@ ptn_Child1=ViewFrame-0
 DocPathName=..\include\src\ansi.c
 DocTemplateIndex=0
 DocumentString=IDE Document
-IsActiveChildFrame=True
+IsActiveChildFrame=False
 WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAAEDEAAAAAOGBAAAAA
 
 [WorkState_v1_1.Frames.MainFrame]
-Title=ReflexBall -- ZDS II - Z8 Encore! Family -- ansi.c - [C:\Users\martin\Desktop\GitHub\include\src\ansi.c]
+Title=ReflexBall -- ZDS II - Z8 Encore! Family -- main.c* - [C:\Users\martin\Desktop\GitHub\Martin projekt\main.c*]
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPOEAAAAAAOEAAAAAAPEEAAAAADGCAAAAA
 
 [WorkState_v1_1.ToolBarMgr]

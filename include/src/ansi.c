@@ -113,5 +113,3 @@ void window(int x1, int y1, int x2, int y2) {
 		printf("%c",array[3]);
 	}
 }
-
-translateTile
