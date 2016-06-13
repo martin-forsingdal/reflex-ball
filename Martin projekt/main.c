@@ -18,12 +18,14 @@ void main() {
 	struct TVector v;
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
-	initTimer(0x04, 0x80);
+	initTimer(0x5A, 0x00);
 	initConsole(2,0);
 	
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
 	startBall(&v);
+	printBall(&v);
+	moveBall(&v);
 	printBall(&v);
 
 	do {} while (1);

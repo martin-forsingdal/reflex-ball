@@ -5,7 +5,7 @@
 #include "fixpoint.h"
 
 void startBall(struct TVector *vector){
-	initVector(vector,10,11,12,13); //hej
+	initVector(vector,1,-1,30,15); //hej
 }
   
 void moveBall(struct TVector *vector){
@@ -25,7 +25,6 @@ void printBall(struct TVector *vector){
   int x,y;
   x=(int) ((vector->a+0x1000)>>14);
   y=(int) ((vector->b+0x1000)>>14);
-  printf("V=(%ld,%ld),%d,%d",(vector->a)>>14,(vector->b)>>14,x,y);
   gotoxy(x,y);
   printf("%c", 'o');
 }

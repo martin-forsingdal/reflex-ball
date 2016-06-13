@@ -26,7 +26,7 @@ void initTimer(char h, char l) {
 
 	//T0H og T0L nulstilles
 	T0H=0x00;
-	T0L=0x01;
+	T0L=0x00;
 
 	//T0RH og T0RL sættes til 23 040 samlet set ((18.432/2^3)/100)
 	T0RH=h;
