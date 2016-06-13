@@ -11,15 +11,10 @@ struct TVector {
 
 //Initialiserer en vektor
 void initVector(struct TVector *v, long startX, long startY, long startA, long startB) {
-	printf("For shift\n");
-	printf("V=([%lx,%lx],[%lx,%lx])\n",startX,startY,startA,startB);
 	(v->x) = (startX << 14);
 	(v->y) = (startY << 14);
 	(v->a) = (startA << 14);
 	(v->b) = (startB << 14);
-	printf("Efter shift\n");
-	printf("V=([%lx,%lx],[%lx,%lx])\n",(v->x)>>14,(v->y)>>14,(v->a)>>14,(v->b)>>14);
-	printf("V=([%lx,%lx],[%lx,%lx])\n",(v->x),(v->y),(v->a),(v->b));
 }
 
 //Printer en vektor på formatet "V=(x,y)

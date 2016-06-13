@@ -5,7 +5,11 @@
 #include "fixpoint.h"
 
 void startBall(struct TVector *vector){
+<<<<<<< Updated upstream
 	initVector(vector,0xffffffff,0xffffffff,30,15); 
+=======
+	initVector(vector,0xffffffff,0xffffffff,25,47); //hej
+>>>>>>> Stashed changes
 }
 
 void moveBall(struct TVector *vector){

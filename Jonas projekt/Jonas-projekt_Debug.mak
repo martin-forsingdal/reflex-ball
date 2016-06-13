@@ -149,7 +149,10 @@ C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\main.obj :  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\LUT.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\ansi.h  \
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\include\board.h  \
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\include\charset.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\fixpoint.h  \
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\include\styring.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\tri.h
 	 $(CC)  $(CFLAGS) C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\main.c
 
