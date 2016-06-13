@@ -14,7 +14,7 @@ void timer0int() {
 }
 
 void main() {
-	struct TVector *vector;
+	struct TVector *v;
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
 	initTimer(0x04, 0x80);
@@ -22,10 +22,7 @@ void main() {
 	
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
-	
-	window(1,1,60,20);
-	startBall(vector);
-	printBall(vector);
+	startBall(v);
 	DI();
 	
 
