@@ -4,9 +4,10 @@
 #include "board.h"
 #include "fixpoint.h"
 
-void startBall(){
-  struct TVector *vector; 
-  initVector(vector,1,1,25,47);
+void startBall(struct TVector *vector){
+ 	initVector(vector,1,1,25,47);
+ 	printf("V=(%ld,%ld)",(vector->x)>>14,(vector->y)>>14);
+
 }
   
 void moveBall(struct TVector *vector){
@@ -22,10 +23,11 @@ void reflectBallWall(struct TVector *vector){
     vector->y=~vector->y+1;
 }
 
-void printBall(struct TVector vector){
+void printBall(struct TVector *vector){
   int x,y;
-  x=(int) ((vector.a+0x800)>>14);
-  y=(int) ((vector.b+0x800)>>14);
+  x=(int) ((vector->a+0x1000)>>14);
+  y=(int) ((vector->b+0x1000)>>14);
+  printf("V=(%ld,%ld),%d,%d",(vector->a)>>14,(vector->b)>>14,x,y);
   gotoxy(x,y);
   printf("%c", 'o');
 }

@@ -9,9 +9,9 @@
 #define styring_h
 
 
-void reflectBallWall(struct Tvector *vector);
-void startBall();
-void moveBall(struct Tvector *vector);
-void printBall(struct Tvector vector);
+void reflectBallWall(struct TVector *vector);
+void startBall(struct TVector *vector);
+void moveBall(struct TVector *vector);
+void printBall(struct TVector *vector);
 
 #endif	// styring_h

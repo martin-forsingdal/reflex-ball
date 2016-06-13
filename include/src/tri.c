@@ -9,10 +9,11 @@ struct TVector {
 
 //Initialiserer en vektor til (10,20)
 void initVector(struct TVector *v, long startX, long startY, long startA, long startB) {
-	v->x = startX << 14;
-	v->y = startY << 14;
-	v->a = startA << 14;
-	v->b = startB << 14;
+	(v->x) = (startX << 14);
+	(v->y) = (startY << 14);
+	(v->a) = (startA << 14);
+	(v->b) = (startB << 14);
+	printf("V=([%ld,%ld],[%ld,%ld])",startX>>14,startY>>14,startA>>14,startB>>14);
 }
 
 //Printer en vektor på formatet "V=(x,y)
@@ -21,7 +22,7 @@ void printV(struct TVector *v) {
 	printFix(expand(v->x));
 	printf(",");
 	printFix(expand(v->y));
-	printf(")\n");
+	printf(")");
 }
 
 //returns a sin value for theta
