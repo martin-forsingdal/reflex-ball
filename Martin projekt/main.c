@@ -14,19 +14,22 @@ void timer0int() {
 }
 
 void main() {
-	long temp = 10;
+	char striker = 10;
 	struct TVector v;
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
 	initTimer(0x5A, 0x00);
 	initConsole(2,0);
+	initButton();
 	
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
+	window(1,1,122,39);
 	startBall(&v);
 	printBall(&v);
 	moveBall(&v);
 	printBall(&v);
+
 
 	do {} while (1);
 }
