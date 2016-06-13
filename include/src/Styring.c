@@ -9,10 +9,15 @@ void startBall(struct TVector *vector){
 }
 
 void moveBall(struct TVector *vector){
-  	gotoxy(vector->a>>14,vector->b>>14);
+  	int x,y;
+	gotoxy(vector->a>>14,vector->b>>14);
 	printf("%c",' ');
 	vector->a=vector->a+vector->x;
   	vector->b=vector->b+vector->y;
+	x=(int) ((vector->a+0x1000)>>14);
+	y=(int) ((vector->b+0x1000)>>14);
+	gotoxy(x,y);
+	printf("%c", 'o');
   	}
   
 void reflectBallWall(struct TVector *vector){
@@ -23,10 +28,3 @@ void reflectBallWall(struct TVector *vector){
     (vector->y)=(~(vector->y)+1);
 }
 
-void printBall(struct TVector *vector){
-  int x,y;
-  x=(int) ((vector->a+0x1000)>>14);
-  y=(int) ((vector->b+0x1000)>>14);
-  gotoxy(x,y);
-  printf("%c", 'o');
-}

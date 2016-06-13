@@ -15,6 +15,7 @@ void initVector(struct TVector *v, long startX, long startY, long startA, long s
 	(v->y) = (startY << 14);
 	(v->a) = (startA << 14);
 	(v->b) = (startB << 14);
+	printf("%d,%d",v->x>>14,v->y>>14);
 }
 
 //Printer en vektor på formatet "V=(x,y)
