@@ -7,7 +7,7 @@ struct TVector {
 	long a,b;
 };
 
-//Initialiserer en vektor til (10,20)
+//Initialiserer en vektor
 void initVector(struct TVector *v, long startX, long startY, long startA, long startB) {
 	(v->x) = (startX << 14);
 	(v->y) = (startY << 14);

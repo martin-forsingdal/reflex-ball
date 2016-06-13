@@ -283,13 +283,14 @@ Bar#19=38102
 Bar#2=38129
 Bar#20=38101
 Bar#21=38100
-Bar#22=38001
-Bar#23=38003
-Bar#24=38004
-Bar#25=38002
-Bar#26=38000
-Bar#27=38005
-Bar#28=0
+Bar#22=38003
+Bar#23=38004
+Bar#24=38002
+Bar#25=38000
+Bar#26=38005
+Bar#27=0
+Bar#28=38001
+Bar#29=0
 Bar#3=38128
 Bar#4=38127
 Bar#5=38126
@@ -298,7 +299,7 @@ Bar#7=38124
 Bar#8=38123
 Bar#9=38122
 BarID=59421
-Bars=29
+Bars=30
 ClassName=
 DockingStyle=0
 ExStyle=0
@@ -387,20 +388,21 @@ DockingStyle=61440
 ExStyle=908
 MDIChild=False
 MRUDockBottomPos=28
-MRUDockID=0
+MRUDockID=59419
 MRUDockLeftPos=-1
 MRUDockRightPos=1365
 MRUDockTopPos=-1
 MRUDockingState=0
-MRUFloatCX=0
-MRUFloatCY=0
+MRUFloatCX=443
+MRUFloatCY=29
 MRUFloatStyle=8196
 MRUFloatXPos=-2147483648
 MRUFloatYPos=0
 MRUHorzDockCX=1366
 MRUHorzDockCY=29
-MRUVertDockCX=0
-MRUVertDockCY=0
+MRUVertDockCX=80
+MRUVertDockCY=440
+MRUWidth=443
 PctWidth=1000000
 PrevFloating=False
 ResourceID=0
@@ -489,9 +491,86 @@ ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 
 [WorkState_v1_1.Frames.ChildFrames]
+ptn_Child1=Document-0
+ptn_Child2=Document-1
+ptn_Child3=Document-2
+ptn_Child4=Document-3
+ptn_Child5=Document-4
+ptn_Child6=Document-5
+ptn_Child7=Document-6
+
+[WorkState_v1_1.Frames.ChildFrames.Document-0]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-0.ViewFrame-0]
+DocPathName=.\main.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=True
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPAAAAAAAAAAAAAAAAGBEAAAAAAFBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-1]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-1.ViewFrame-0]
+DocPathName=..\include\src\styring.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAAADEAAAAAKGBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-2]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-2.ViewFrame-0]
+DocPathName=..\include\src\tri.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAAOEEAAAAAKGBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-3]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-3.ViewFrame-0]
+DocPathName=..\include\src\fixpoint.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPOEAAAAAAOEAAAAAAIGEAAAAAEIBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-4]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-4.ViewFrame-0]
+DocPathName=..\include\src\LUT.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPIGAAAAAAIGAAAAAACIEAAAAAOJBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-5]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-5.ViewFrame-0]
+DocPathName=..\include\src\board.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPCIAAAAAACIAAAAAAMJEAAAAAILBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-6]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-6.ViewFrame-0]
+DocPathName=..\include\src\ansi.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPAAAAAAAAAAAAAAAAKBEAAAAAGDBAAAAA
 
 [WorkState_v1_1.Frames.MainFrame]
-Title=reflex-ball -- ZDS II - Z8 Encore! Family
+Title=reflex-ball -- ZDS II - Z8 Encore! Family -- main.c - [C:\Users\martin\Desktop\GitHub\Martin projekt\main.c]
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPOEAAAAAAOEAAAAAAPEEAAAAADGCAAAAA
 
 [WorkState_v1_1.ToolBarMgr]

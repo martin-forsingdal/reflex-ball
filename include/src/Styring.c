@@ -6,8 +6,6 @@
 
 void startBall(struct TVector *vector){
  	initVector(vector,1,1,25,47);
- 	printf("V=(%ld,%ld)",(vector->x)>>14,(vector->y)>>14);
-
 }
   
 void moveBall(struct TVector *vector){
