@@ -6,11 +6,16 @@
 #include "charset.h";
 #include "styring.h";
 
-char flag;
+int t_m;
+int t_s;
 
 #pragma interrupt
 void timer0int() {
-	flag=0x01;
+	if(t_m > 99) {
+		t_m = 0;
+		t_s++;
+	}else
+	t_m++;
 }
 
 void main() {
@@ -18,7 +23,7 @@ void main() {
 	struct TVector v;
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
-	initTimer(0x5A, 0x00);
+	initTimer(0x09, 0x00);
 	initConsole(2,0);
 	initButton();
 	
@@ -26,10 +31,16 @@ void main() {
 	EI();
 	window(1,1,122,39);
 	startBall(&v);
-	printBall(&v);
-	moveBall(&v);
-	printBall(&v);
-
+	while(1) {
+		if(t_m==100) {
+			DI();
+			moveBall(&v);
+			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14)
+				reflectBallWall(&v); 
+			EI();
+		}
+   }
+   
 
 	do {} while (1);
 }

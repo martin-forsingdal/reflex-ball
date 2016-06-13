@@ -12,6 +12,5 @@
 void reflectBallWall(struct TVector *vector);
 void startBall(struct TVector *vector);
 void moveBall(struct TVector *vector);
-void printBall(struct TVector *vector);
 
 #endif	// styring_h
