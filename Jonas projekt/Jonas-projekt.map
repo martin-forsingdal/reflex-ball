@@ -4,13 +4,13 @@ Copyright (C) 1999-2004 ZiLOG, Inc. All Rights Reserved
 
 LINK MAP:
 
-DATE:      Mon Jun 13 14:29:58 2016
+DATE:      Mon Jun 13 16:52:17 2016
 PROCESSOR: assembler
 FILES:     C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\startupL.obj
            .\zsldevinit.obj
            .\ansi.obj             .\board.obj            .\fixpoint.obj         
            .\LUT.obj              .\tri.obj              .\main.obj             
-           .\styring.obj          
+           .\styring.obj          .\tiles.obj            
            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\std\crtrevaaLDD.lib
            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\std\fpdumyL.obj
            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\zslLYD.lib
@@ -82,7 +82,7 @@ define _zsl_g_clock_xdefine = 5529600
 /* Set frequency to 20000000 MHz */
 define __user_frequency = 20000000
 
-"C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\Jonas-projekt"=  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\startupL.obj,  .\zsldevinit.obj,  .\ansi.obj,  .\board.obj,  .\fixpoint.obj,  .\LUT.obj,  .\tri.obj,  .\main.obj,  .\styring.obj,  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\std\crtrevaaLDD.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\std\fpdumyL.obj,  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\zslLYD.lib
+"C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\Jonas-projekt"=  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\startupL.obj,  .\zsldevinit.obj,  .\ansi.obj,  .\board.obj,  .\fixpoint.obj,  .\LUT.obj,  .\tri.obj,  .\main.obj,  .\styring.obj,  .\tiles.obj,  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\std\crtrevaaLDD.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\std\fpdumyL.obj,  C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\zslLYD.lib
 
 
 SPACE ALLOCATION:
@@ -90,9 +90,9 @@ SPACE ALLOCATION:
 
 Space              Base        Top         Size
 ------------------ ----------- ----------- ---------
-EDATA                   E:0100      E:0720      621h
+EDATA                   E:0100      E:0723      624h
 RDATA                     R:E0        R:EF       10h
-ROM                     C:0000      C:32D4     32d5h
+ROM                     C:0000      C:2FA8     2fa9h
 
 
 SEGMENTS WITHIN SPACE:
@@ -101,7 +101,7 @@ SEGMENTS WITHIN SPACE:
 EDATA              Type                Base        Top         Size
 ------------------ ------------------- ----------- ----------- ---------
 FAR_BSS            normal data              E:0100      E:0120       21h
-FAR_DATA           normal data              E:0121      E:0720      600h
+FAR_DATA           normal data              E:0121      E:0723      603h
 
 
 RDATA              Type                Base        Top         Size
@@ -112,36 +112,37 @@ workingreg         absolute data              R:E0        R:EF       10h
 ROM                Type                Base        Top         Size
 ------------------ ------------------- ----------- ----------- ---------
 __VECTORS          absolute data            C:0000      C:0037       38h
-_sputch_TEXT       normal data              C:20B8      C:20E6       2fh
-_uputch_TEXT       normal data              C:2089      C:20A1       19h
-abs_TEXT           normal data              C:2799      C:27D6       3eh
-ansi_TEXT          normal data              C:0349      C:092D      5e5h
-board_TEXT         normal data              C:092E      C:0A17       eah
+_sputch_TEXT       normal data              C:1970      C:199E       2fh
+_uputch_TEXT       normal data              C:1941      C:1959       19h
+abs_TEXT           normal data              C:2051      C:208E       3eh
+ansi_TEXT          normal data              C:0313      C:08F7      5e5h
+board_TEXT         normal data              C:08F8      C:09E1       eah
 CODE               normal data              C:0100      C:0297      198h
-FAR_DATA           * segment copy *         C:2CD5      C:32D4      600h
-isupper_TEXT       normal data              C:2C95      C:2CD4       40h
-ixpoint_TEXT       normal data              C:0A18      C:0B09       f2h
-main_TEXT          normal data              C:0EC8      C:11A2      2dbh
-mstring_TEXT       normal data              C:274C      C:2798       4dh
-nt_send_TEXT       normal data              C:1547      C:171A      1d4h
-printf_TEXT        normal data              C:14DD      C:1546       6ah
-putch_TEXT         normal data              C:2B7E      C:2BDA       5dh
-reverse_TEXT       normal data              C:27D7      C:28AB       d5h
+FAR_DATA           * segment copy *         C:29A6      C:2FA8      603h
+isupper_TEXT       normal data              C:2891      C:28D0       40h
+ixpoint_TEXT       normal data              C:09E2      C:0AD3       f2h
+main_TEXT          normal data              C:0E92      C:0EAD       1ch
+mstring_TEXT       normal data              C:2004      C:2050       4dh
+nt_send_TEXT       normal data              C:1218      C:13EB      1d4h
+printf_TEXT        normal data              C:11AE      C:1217       6ah
+putch_TEXT         normal data              C:277A      C:27D6       5dh
+reverse_TEXT       normal data              C:28D1      C:29A5       d5h
 ROM_DATA           normal data              C:0038      C:00FF       c8h
-ROM_TEXT           normal data              C:0298      C:02D7       40h
-startup            normal data              C:02D8      C:0348       71h
-strlen_TEXT        normal data              C:1B34      C:1B75       42h
-styring_TEXT       normal data              C:11A3      C:14DC      33ah
-t_putch_TEXT       normal data              C:20A2      C:20B7       16h
-teuart0_TEXT       normal data              C:2BDB      C:2C94       bah
-tolower_TEXT       normal data              C:2B35      C:2B7D       49h
-tri_TEXT           normal data              C:0B0A      C:0EC7      3beh
-tstring_TEXT       normal data              C:20E7      C:22A8      1c2h
-ultoa_TEXT         normal data              C:171B      C:1B33      419h
-uprint_TEXT        normal data              C:1B76      C:2061      4ech
-upscan_TEXT        normal data              C:22A9      C:274B      4a3h
-ustoa_TEXT         normal data              C:2062      C:2088       27h
-uultoa_TEXT        normal data              C:28AC      C:2B34      289h
+ROM_TEXT           normal data              C:0298      C:02A1        ah
+startup            normal data              C:02A2      C:0312       71h
+strlen_TEXT        normal data              C:13EC      C:142D       42h
+styring_TEXT       normal data              C:0EAE      C:112E      281h
+t_putch_TEXT       normal data              C:195A      C:196F       16h
+teuart0_TEXT       normal data              C:27D7      C:2890       bah
+tiles_TEXT         normal data              C:112F      C:11AD       7fh
+tolower_TEXT       normal data              C:2731      C:2779       49h
+tri_TEXT           normal data              C:0AD4      C:0E91      3beh
+tstring_TEXT       normal data              C:199F      C:1B60      1c2h
+ultoa_TEXT         normal data              C:2318      C:2730      419h
+uprint_TEXT        normal data              C:142E      C:1919      4ech
+upscan_TEXT        normal data              C:1B61      C:2003      4a3h
+ustoa_TEXT         normal data              C:191A      C:1940       27h
+uultoa_TEXT        normal data              C:208F      C:2317      289h
 
 SEGMENTS WITHIN MODULES:
 ========================
@@ -150,7 +151,7 @@ Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\ANSI.C (File: ansi.obj) Versi
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: ansi_TEXT                           C:0349      C:092D      5e5h
+    Segment: ansi_TEXT                           C:0313      C:08F7      5e5h
     Segment: FAR_DATA                            E:0127      E:012E        8h
     Segment: ROM_TEXT                            C:0298      C:02A1        ah
 
@@ -159,7 +160,7 @@ Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\BOARD.C (File: board.obj) Ver
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: board_TEXT                          C:092E      C:0A17       eah
+    Segment: board_TEXT                          C:08F8      C:09E1       eah
 
 
 Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\FIXPOINT.C (File: fixpoint.obj) Version: 1:0 06/13/2016 12:02:43
@@ -167,7 +168,7 @@ Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\FIXPOINT.C (File: fixpoint.ob
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_DATA                            E:070D      E:0718        ch
-    Segment: ixpoint_TEXT                        C:0A18      C:0B09       f2h
+    Segment: ixpoint_TEXT                        C:09E2      C:0AD3       f2h
 
 
 Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\LUT.C (File: LUT.obj) Version: 1:0 06/13/2016 12:02:44
@@ -177,12 +178,19 @@ Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\LUT.C (File: LUT.obj) Version
     Segment: FAR_DATA                            E:012F      E:052E      400h
 
 
-Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\STYRING.C (File: styring.obj) Version: 1:0 06/13/2016 13:52:53
+Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\STYRING.C (File: styring.obj) Version: 1:0 06/13/2016 16:11:56
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: ROM_TEXT                            C:02D1      C:02D7        7h
-    Segment: styring_TEXT                        C:11A3      C:14DC      33ah
+    Segment: styring_TEXT                        C:0EAE      C:112E      281h
+
+
+Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\TILES.C (File: tiles.obj) Version: 1:0 06/13/2016 16:52:15
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: FAR_DATA                            E:0721      E:0723        3h
+    Segment: tiles_TEXT                          C:112F      C:11AD       7fh
 
 
 Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\TRI.C (File: tri.obj) Version: 1:0 06/13/2016 13:19:16
@@ -190,7 +198,7 @@ Module: ..\..\..\DOCUMENTS\REFLEX-BALL\INCLUDE\SRC\TRI.C (File: tri.obj) Version
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_DATA                            E:0719      E:0720        8h
-    Segment: tri_TEXT                            C:0B0A      C:0EC7      3beh
+    Segment: tri_TEXT                            C:0AD4      C:0E91      3beh
 
 
 Module: ..\..\src\boot\common\startupl.asm (File: startupL.obj) Version: 1:0 02/23/2005 13:22:37
@@ -200,7 +208,7 @@ Module: ..\..\src\boot\common\startupl.asm (File: startupL.obj) Version: 1:0 02/
     Segment: __VECTORS                           C:0000      C:0037       38h
     Segment: FAR_BSS                             E:0100      E:0101        2h
     Segment: FAR_DATA                            E:0121      E:0121        1h
-    Segment: startup                             C:02D8      C:0348       71h
+    Segment: startup                             C:02A2      C:0312       71h
     Segment: workingreg                            R:E0        R:EF       10h
 
 
@@ -208,7 +216,7 @@ Module: ..\UART\COMMON\PUTCH.C (Library: zslLYD.lib) Version: 1:0 02/23/2005 13:
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: putch_TEXT                          C:2B7E      C:2BDA       5dh
+    Segment: putch_TEXT                          C:277A      C:27D6       5dh
 
 
 Module: ..\UART\COMMON\WRITEUART0.C (Library: zslLYD.lib) Version: 1:0 02/23/2005 13:32:38
@@ -216,16 +224,15 @@ Module: ..\UART\COMMON\WRITEUART0.C (Library: zslLYD.lib) Version: 1:0 02/23/200
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_DATA                            E:070C      E:070C        1h
-    Segment: teuart0_TEXT                        C:2BDB      C:2C94       bah
+    Segment: teuart0_TEXT                        C:27D7      C:2890       bah
 
 
-Module: .\MAIN.C (File: main.obj) Version: 1:0 06/13/2016 14:29:58
+Module: .\MAIN.C (File: main.obj) Version: 1:0 06/13/2016 16:49:56
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_DATA                            E:052F      E:0709      1dbh
-    Segment: main_TEXT                           C:0EC8      C:11A2      2dbh
-    Segment: ROM_TEXT                            C:02A2      C:02D0       2fh
+    Segment: main_TEXT                           C:0E92      C:0EAD       1ch
 
 
 Module: C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\zsldevinit.asm (File: zsldevinit.obj) Version: 1:0 06/13/2016 12:02:43
@@ -240,7 +247,7 @@ Module: COMMON\ABS.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:08
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: abs_TEXT                            C:2799      C:27D6       3eh
+    Segment: abs_TEXT                            C:2051      C:208E       3eh
 
 
 Module: common\fpdumyl.asm (File: fpdumyL.obj) Version: 1:0 02/23/2005 13:22:38
@@ -262,7 +269,7 @@ Module: COMMON\ISUPPER.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:2
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: isupper_TEXT                        C:2C95      C:2CD4       40h
+    Segment: isupper_TEXT                        C:2891      C:28D0       40h
 
 
 Module: COMMON\MAPTAB.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:10
@@ -284,63 +291,63 @@ Module: COMMON\PRINT_PUTCH.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: t_putch_TEXT                        C:20A2      C:20B7       16h
+    Segment: t_putch_TEXT                        C:195A      C:196F       16h
 
 
 Module: COMMON\PRINT_PUTROMSTRING.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:12
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: mstring_TEXT                        C:274C      C:2798       4dh
+    Segment: mstring_TEXT                        C:2004      C:2050       4dh
 
 
 Module: COMMON\PRINT_PUTSTRING.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:12
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: tstring_TEXT                        C:20E7      C:22A8      1c2h
+    Segment: tstring_TEXT                        C:199F      C:1B60      1c2h
 
 
 Module: COMMON\PRINT_SEND.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:12
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: nt_send_TEXT                        C:1547      C:171A      1d4h
+    Segment: nt_send_TEXT                        C:1218      C:13EB      1d4h
 
 
 Module: COMMON\PRINT_SPUTCH.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:11
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: _sputch_TEXT                        C:20B8      C:20E6       2fh
+    Segment: _sputch_TEXT                        C:1970      C:199E       2fh
 
 
 Module: COMMON\PRINT_UPUTCH.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:11
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: _uputch_TEXT                        C:2089      C:20A1       19h
+    Segment: _uputch_TEXT                        C:1941      C:1959       19h
 
 
 Module: COMMON\PRINTF.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:12
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: printf_TEXT                         C:14DD      C:1546       6ah
+    Segment: printf_TEXT                         C:11AE      C:1217       6ah
 
 
 Module: COMMON\STRLEN.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:14
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: strlen_TEXT                         C:1B34      C:1B75       42h
+    Segment: strlen_TEXT                         C:13EC      C:142D       42h
 
 
 Module: COMMON\TOLOWER.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:15
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: tolower_TEXT                        C:2B35      C:2B7D       49h
+    Segment: tolower_TEXT                        C:2731      C:2779       49h
 
 
 Module: common\ubmul.asm (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:19
@@ -354,14 +361,14 @@ Module: common\ucase.asm (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:2
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0257      C:0294       3eh
+    Segment: CODE                                C:0202      C:023F       3eh
 
 
 Module: common\uldiv.asm (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:19
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0202      C:0256       55h
+    Segment: CODE                                C:0240      C:0294       55h
 
 
 Module: common\ulmul.asm (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:19
@@ -375,14 +382,14 @@ Module: COMMON\ULTOA.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: ultoa_TEXT                          C:171B      C:1B33      419h
+    Segment: ultoa_TEXT                          C:2318      C:2730      419h
 
 
 Module: COMMON\UPRINT.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:16
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: uprint_TEXT                         C:1B76      C:2061      4ech
+    Segment: uprint_TEXT                         C:142E      C:1919      4ech
 
 
 Module: COMMON\UPSCAN.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:17
@@ -390,28 +397,28 @@ Module: COMMON\UPSCAN.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: ROM_DATA                            C:0038      C:007F       48h
-    Segment: upscan_TEXT                         C:22A9      C:274B      4a3h
+    Segment: upscan_TEXT                         C:1B61      C:2003      4a3h
 
 
 Module: COMMON\UREVERSE.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:17
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: reverse_TEXT                        C:27D7      C:28AB       d5h
+    Segment: reverse_TEXT                        C:28D1      C:29A5       d5h
 
 
 Module: COMMON\USTOA.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:18
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: ustoa_TEXT                          C:2062      C:2088       27h
+    Segment: ustoa_TEXT                          C:191A      C:1940       27h
 
 
 Module: COMMON\UULTOA.C (Library: crtrevaaLDD.lib) Version: 1:0 02/23/2005 13:27:18
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: uultoa_TEXT                         C:28AC      C:2B34      289h
+    Segment: uultoa_TEXT                         C:208F      C:2317      289h
 
 EXTERNAL DEFINITIONS:
 =====================
@@ -475,18 +482,18 @@ ___print_fmt                          E:0112 PRINT_GLOBALS   FAR_BSS
 ___print_leading_char                 E:011E PRINT_GLOBALS   FAR_BSS                         
 ___print_len                          E:011D PRINT_GLOBALS   FAR_BSS                         
 ___print_out                          E:011F PRINT_GLOBALS   FAR_BSS                         
-___print_putch                        C:20A2 PRINT_PUTCH     t_putch_TEXT                    
-___print_putromstring                 C:274C PRINT_PUTROMSTR mstring_TEXT                    
-___print_send                         C:1547 PRINT_SEND      nt_send_TEXT                    
-___print_sendstring                   C:20E7 PRINT_PUTSTRING tstring_TEXT                    
-___print_sputch                       C:20B8 PRINT_SPUTCH    _sputch_TEXT                    
-___print_uputch                       C:2089 PRINT_UPUTCH    _uputch_TEXT                    
+___print_putch                        C:195A PRINT_PUTCH     t_putch_TEXT                    
+___print_putromstring                 C:2004 PRINT_PUTROMSTR mstring_TEXT                    
+___print_send                         C:1218 PRINT_SEND      nt_send_TEXT                    
+___print_sendstring                   C:199F PRINT_PUTSTRING tstring_TEXT                    
+___print_sputch                       C:1970 PRINT_SPUTCH    _sputch_TEXT                    
+___print_uputch                       C:1941 PRINT_UPUTCH    _uputch_TEXT                    
 ___print_xputch                       E:070A PRINT_GLOBALS   FAR_DATA                        
 __close_periphdevice                  C:0101 zsldevinit      CODE                            
 __far_atof                            C:0102 fpdumyl         CODE                            
 __far_frexp                           C:0102 fpdumyl         CODE                            
 __far_modf                            C:0102 fpdumyl         CODE                            
-__far_strlen                          C:1B34 STRLEN          strlen_TEXT                     
+__far_strlen                          C:13EC STRLEN          strlen_TEXT                     
 __far_strtod                          C:0102 fpdumyl         CODE                            
 __fpadd                               C:0102 fpdumyl         CODE                            
 __fpcmp                               C:0102 fpdumyl         CODE                            
@@ -519,104 +526,105 @@ __u_dtof                              C:0102 fpdumyl         CODE
 __u_dtog                              C:0102 fpdumyl         CODE                            
 __u_flt_info                          C:0102 fpdumyl         CODE                            
 __u_flt_rnd                           C:0102 fpdumyl         CODE                            
-__u_ltoa                              C:171B ULTOA           ultoa_TEXT                      
-__u_print                             C:1B76 UPRINT          uprint_TEXT                     
-__u_pscan                             C:22A9 UPSCAN          upscan_TEXT                     
-__u_reverse                           C:27D7 UREVERSE        reverse_TEXT                    
-__u_stoa                              C:2062 USTOA           ustoa_TEXT                      
-__u_ultoa                             C:28AC UULTOA          uultoa_TEXT                     
+__u_ltoa                              C:2318 ULTOA           ultoa_TEXT                      
+__u_print                             C:142E UPRINT          uprint_TEXT                     
+__u_pscan                             C:1B61 UPSCAN          upscan_TEXT                     
+__u_reverse                           C:28D1 UREVERSE        reverse_TEXT                    
+__u_stoa                              C:191A USTOA           ustoa_TEXT                      
+__u_ultoa                             C:208F UULTOA          uultoa_TEXT                     
 __ubmul                               C:0295 ubmul           CODE                            
-__ucase                               C:0257 ucase           CODE                            
-__uldiv                               C:0202 uldiv           CODE                            
+__ucase                               C:0202 ucase           CODE                            
+__uldiv                               C:0240 uldiv           CODE                            
 __ulmul                               C:016A ulmul           CODE                            
 __user_frequency                    01312D00 (User Defined)
-_abs                                  C:2799 ABS             abs_TEXT                        
+_abs                                  C:2051 ABS             abs_TEXT                        
 _acos                                 C:0102 fpdumyl         CODE                            
 _asin                                 C:0102 fpdumyl         CODE                            
 _atan                                 C:0102 fpdumyl         CODE                            
 _atan2                                C:0102 fpdumyl         CODE                            
-_bgcolor                              C:03DF ANSI            ansi_TEXT                       
-_blink                                C:0663 ANSI            ansi_TEXT                       
-_c_startup                            C:02D8 startupl        startup                         
+_bgcolor                              C:03A9 ANSI            ansi_TEXT                       
+_blink                                C:062D ANSI            ansi_TEXT                       
+_c_startup                            C:02A2 startupl        startup                         
 _ceil                                 C:0102 fpdumyl         CODE                            
 _character_data                       E:052F MAIN            FAR_DATA                        
 _close_periphdevice                   C:0101 zsldevinit      CODE                            
-_clreol                               C:0542 ANSI            ansi_TEXT                       
-_clrscr                               C:0511 ANSI            ansi_TEXT                       
-_color                                C:042A ANSI            ansi_TEXT                       
-_cos                                  C:0CAD TRI             tri_TEXT                        
+_clreol                               C:050C ANSI            ansi_TEXT                       
+_clrscr                               C:04DB ANSI            ansi_TEXT                       
+_color                                C:03F4 ANSI            ansi_TEXT                       
+_cos                                  C:0C77 TRI             tri_TEXT                        
 _cosh                                 C:0102 fpdumyl         CODE                            
 _errno                                E:0100 startupl        FAR_BSS                         
-_exit                                 C:0347 startupl        startup                         
+_exit                                 C:0311 startupl        startup                         
 _exp                                  C:0102 fpdumyl         CODE                            
-_expand                               C:0AE7 FIXPOINT        ixpoint_TEXT                    
+_expand                               C:0AB1 FIXPOINT        ixpoint_TEXT                    
 _fabs                                 C:0102 fpdumyl         CODE                            
-_far_heapbot                        00000720 (User Defined)
+_far_heapbot                        00000723 (User Defined)
 _far_heaptop                        00000EFF (User Defined)
 _far_stack                          00000EFF (User Defined)
-_fgcolor                              C:0349 ANSI            ansi_TEXT                       
+_fgcolor                              C:0313 ANSI            ansi_TEXT                       
 _floor                                C:0102 fpdumyl         CODE                            
 _fmod                                 C:0102 fpdumyl         CODE                            
 _g_clock0                             E:0123 zsldevinit      FAR_DATA                        
 _g_clock1                             E:0123 zsldevinit      FAR_DATA                        
 _g_simulate                           E:0122 zsldevinit      FAR_DATA                        
 _g_Txflag0                            E:070C WRITEUART0      FAR_DATA                        
-_gotoxy                               C:0573 ANSI            ansi_TEXT                       
-_initButton                           C:092E BOARD           board_TEXT                      
-_initConsole                          C:09AE BOARD           board_TEXT                      
-_initTimer                            C:0983 BOARD           board_TEXT                      
-_initVector                           C:0B0A TRI             tri_TEXT                        
-_isupper                              C:2C95 ISUPPER         isupper_TEXT                    
+_gotoxy                               C:053D ANSI            ansi_TEXT                       
+_initButton                           C:08F8 BOARD           board_TEXT                      
+_initConsole                          C:0978 BOARD           board_TEXT                      
+_initTimer                            C:094D BOARD           board_TEXT                      
+_initVector                           C:0AD4 TRI             tri_TEXT                        
+_isupper                              C:2891 ISUPPER         isupper_TEXT                    
 _ldexp                                C:0102 fpdumyl         CODE                            
-_LEDinit                              C:09F1 BOARD           board_TEXT                      
+_LEDinit                              C:09BB BOARD           board_TEXT                      
 _len_farbss                         00000021 (User Defined)
-_len_fardata                        00000600 (User Defined)
+_len_fardata                        00000603 (User Defined)
 _len_nearbss                        00000000 (User Defined)
 _len_neardata                       00000000 (User Defined)
+_levelOne                             C:112F TILES           tiles_TEXT                      
 _log                                  C:0102 fpdumyl         CODE                            
 _log10                                C:0102 fpdumyl         CODE                            
-_low_far_romdata                    00002CD5 (User Defined)
+_low_far_romdata                    000029A6 (User Defined)
 _low_farbss                         00000100 (User Defined)
 _low_fardata                        00000121 (User Defined)
 _low_near_romdata                   00000000 (User Defined)
 _low_nearbss                        00000000 (User Defined)
 _low_neardata                       00000000 (User Defined)
-_main                                 C:0EC8 MAIN            main_TEXT                       
-_moveBall                             C:11F8 STYRING         styring_TEXT                    
+_main                                 C:0E92 MAIN            main_TEXT                       
+_moveBall                             C:0F03 STYRING         styring_TEXT                    
 _near_heapbot                       000000EF (User Defined)
 _near_heaptop                       000000FF (User Defined)
 _near_stack                         000000FF (User Defined)
 _open_periphdevice                    C:0100 zsldevinit      CODE                            
 _pow                                  C:0102 fpdumyl         CODE                            
-_printBall                            C:1317 STYRING         styring_TEXT                    
-_printf                               C:14DD PRINTF          printf_TEXT                     
-_printFix                             C:0A18 FIXPOINT        ixpoint_TEXT                    
-_printV                               C:0BB9 TRI             tri_TEXT                        
-_putch                                C:2B7E PUTCH           putch_TEXT                      
-_readKey                              C:094D BOARD           board_TEXT                      
-_reflectBallWall                      C:127B STYRING         styring_TEXT                    
-_resetbgcolor                         C:04E0 ANSI            ansi_TEXT                       
-_reverse                              C:06F4 ANSI            ansi_TEXT                       
-_rotate                               C:0CDF TRI             tri_TEXT                        
-_sin                                  C:0C5D TRI             tri_TEXT                        
+_printBall                            C:108C STYRING         styring_TEXT                    
+_printf                               C:11AE PRINTF          printf_TEXT                     
+_printFix                             C:09E2 FIXPOINT        ixpoint_TEXT                    
+_printV                               C:0B83 TRI             tri_TEXT                        
+_putch                                C:277A PUTCH           putch_TEXT                      
+_readKey                              C:0917 BOARD           board_TEXT                      
+_reflectBallWall                      C:0FF0 STYRING         styring_TEXT                    
+_resetbgcolor                         C:04AA ANSI            ansi_TEXT                       
+_reverse                              C:06BE ANSI            ansi_TEXT                       
+_rotate                               C:0CA9 TRI             tri_TEXT                        
+_sin                                  C:0C27 TRI             tri_TEXT                        
 _SIN                                  E:012F LUT             FAR_DATA                        
 _sinh                                 C:0102 fpdumyl         CODE                            
 _sqrt                                 C:0102 fpdumyl         CODE                            
-_startBall                            C:11A3 STYRING         styring_TEXT                    
+_startBall                            C:0EAE STYRING         styring_TEXT                    
 _tan                                  C:0102 fpdumyl         CODE                            
 _tanh                                 C:0102 fpdumyl         CODE                            
-_tolower                              C:2B35 TOLOWER         tolower_TEXT                    
-_underline                            C:05D2 ANSI            ansi_TEXT                       
-_window                               C:0785 ANSI            ansi_TEXT                       
-_write_UART0                          C:2BDB WRITEUART0      teuart0_TEXT                    
+_tolower                              C:2731 TOLOWER         tolower_TEXT                    
+_underline                            C:059C ANSI            ansi_TEXT                       
+_window                               C:074F ANSI            ansi_TEXT                       
+_write_UART0                          C:27D7 WRITEUART0      teuart0_TEXT                    
 _zsl_g_clock_xdefine                00546000 (User Defined)
 
-192 external symbol(s).
+193 external symbol(s).
 
 
 START ADDRESS:
 ==============
-(C:02D8) set in module ..\..\src\boot\common\startupl.asm.
+(C:02A2) set in module ..\..\src\boot\common\startupl.asm.
 
 CALL GRAPH
 ==========

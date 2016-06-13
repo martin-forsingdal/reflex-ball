@@ -58,6 +58,8 @@ clean:
             del C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\main.obj
 	@if exist C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\styring.obj  \
             del C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\styring.obj
+	@if exist C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\tiles.obj  \
+            del C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\tiles.obj
 
 rebuildall: clean Debug
 
@@ -73,7 +75,8 @@ OBJS =  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\LUT.obj  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\tri.obj  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\main.obj  \
-            C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\styring.obj
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\styring.obj  \
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\tiles.obj
 
 Jonas-projekt: $(OBJS)
 	 $(LINK)  @C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\Jonas-projekt_Debug.linkcmd
@@ -153,6 +156,7 @@ C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\main.obj :  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\charset.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\fixpoint.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\styring.h  \
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\include\tiles.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\tri.h
 	 $(CC)  $(CFLAGS) C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\main.c
 
@@ -176,4 +180,8 @@ C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\styring.obj :  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\fixpoint.h  \
             C:\Users\Jonas\DOCUME~1\REFLEX~1\include\tri.h
 	 $(CC)  $(CFLAGS) C:\Users\Jonas\Documents\reflex-ball\include\src\styring.c
+
+C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\tiles.obj :  \
+            C:\Users\Jonas\Documents\reflex-ball\include\src\tiles.c
+	 $(CC)  $(CFLAGS) C:\Users\Jonas\Documents\reflex-ball\include\src\tiles.c
 
