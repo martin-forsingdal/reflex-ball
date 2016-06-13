@@ -5,20 +5,20 @@
 #include "fixpoint.h"
 
 void startBall(struct TVector *vector){
-	initVector(vector,10,11,12,13); //hej
+	initVector(vector,0xffffffff,0xffffffff,25,47); 
 }
-  
+
 void moveBall(struct TVector *vector){
   vector->a=vector->a+vector->x;
   vector->b=vector->b+vector->y;
   }
   
 void reflectBallWall(struct TVector *vector){
-  if(vector->b>1){
-    vector->x=~vector->x+1;
+  if((vector->b)>(2<<14)){
+    (vector->x)=(~(vector->x)+1);
   }
   else
-    vector->y=~vector->y+1;
+    (vector->y)=(~(vector->y)+1);
 }
 
 void printBall(struct TVector *vector){
