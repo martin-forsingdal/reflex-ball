@@ -5,12 +5,19 @@
 
 void main() {
 	
+<<<<<<< Updated upstream
 	struct TVector v;
 	startBall(&v);
 	
 	
 	
 	
+=======
+	long a,b;
+	a = 4 << 14;
+	b = 9 << 14;
+	
+>>>>>>> Stashed changes
 	/*initVector(v, 7,8,9,8);
 	/*printV(v);
 	printFix(expand(sin(128)));
