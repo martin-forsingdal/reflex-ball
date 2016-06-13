@@ -5,8 +5,8 @@
 
 void main() {
 	
-	struct TVector *v;
-	startBall(v);
+	struct TVector v;
+	startBall(&v);
 	
 	
 	
