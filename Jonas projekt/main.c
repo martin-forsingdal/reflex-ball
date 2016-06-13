@@ -5,11 +5,11 @@
 
 void main() {
 	int a = 0xff80;
-	struct TVector *v, vector;
-	v = &vector;
+	struct TVector *v;
+	//v = &vector;
 	
 	
-	initVector(v, 7,8);
+	initVector(v, 7,8,9,8);
 	/*printV(v);
 	printFix(expand(sin(128)));
 	printf("\n");
