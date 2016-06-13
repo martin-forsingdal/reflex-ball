@@ -365,7 +365,7 @@ MRUFloatCX=300
 MRUFloatCY=180
 MRUFloatStyle=4
 MRUFloatXPos=-2147483648
-MRUFloatYPos=6822976
+MRUFloatYPos=4508672
 MRUHorzDockCX=300
 MRUHorzDockCY=180
 MRUVertDockCX=180
@@ -396,7 +396,7 @@ MRUFloatCX=0
 MRUFloatCY=0
 MRUFloatStyle=8196
 MRUFloatXPos=-2147483648
-MRUFloatYPos=5843424
+MRUFloatYPos=0
 MRUHorzDockCX=1463
 MRUHorzDockCY=29
 MRUVertDockCX=0
@@ -430,7 +430,7 @@ MRUFloatCX=0
 MRUFloatCY=0
 MRUFloatStyle=8196
 MRUFloatXPos=-2147483648
-MRUFloatYPos=4483968
+MRUFloatYPos=0
 MRUHorzDockCX=296
 MRUHorzDockCY=30
 MRUVertDockCX=0
@@ -489,9 +489,53 @@ ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 
 [WorkState_v1_1.Frames.ChildFrames]
+ptn_Child1=Document-0
+ptn_Child2=Document-1
+ptn_Child3=Document-2
+ptn_Child4=Document-3
+
+[WorkState_v1_1.Frames.ChildFrames.Document-0]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-0.ViewFrame-0]
+DocPathName=.\main.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=True
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPAAAAAAAAAAAAAAAADEEAAAAAEKBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-1]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-1.ViewFrame-0]
+DocPathName=..\include\tri.h
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAABGEAAAAACMBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-2]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-2.ViewFrame-0]
+DocPathName=..\include\src\Styring.c
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAALHEAAAAAOLBAAAAA
+
+[WorkState_v1_1.Frames.ChildFrames.Document-3]
+ptn_Child1=ViewFrame-0
+
+[WorkState_v1_1.Frames.ChildFrames.Document-3.ViewFrame-0]
+DocPathName=..\include\styring.h
+DocTemplateIndex=0
+DocumentString=IDE Document
+IsActiveChildFrame=False
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPOEAAAAAAOEAAAAAAFJEAAAAAINBAAAAA
 
 [WorkState_v1_1.Frames.MainFrame]
-Title=Jonas-projekt -- ZDS II - Z8 Encore! Family
+Title=Jonas-projekt -- ZDS II - Z8 Encore! Family -- main.c - [main.c]
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPOEAAAAAAOEAAAAAAPEEAAAAADGCAAAAA
 
 [WorkState_v1_1.ToolBarMgr]

@@ -4,25 +4,27 @@
 #include "ansi.h"
 
 void main() {
-	int a = 0xff80;
+	
 	struct TVector *v;
-	//v = &vector;
+	startBall(v);
 	
 	
-	initVector(v, 7,8,9,8);
+	
+	
+	/*initVector(v, 7,8,9,8);
 	/*printV(v);
 	printFix(expand(sin(128)));
 	printf("\n");
 	printFix(expand(cos(128)));
-	printf("\n");*/
+	printf("\n");
 	rotate(v, 128);
 	printV(v);
-	/*printFix(expand(sin(-128)));
+	printFix(expand(sin(-128)));
 	printf("\n");
 	printFix(expand(cos(-128)));
-	printf("\n");*/
+	printf("\n");
 	rotate(v, 0xff80);
-	printV(v);
+	printV(v);*/
 	
 	/*printFix(expand(sin(0)));
 	printf("\n");

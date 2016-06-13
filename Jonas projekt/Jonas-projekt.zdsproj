@@ -9,6 +9,8 @@
 <file filter-key="">..\include\src\fixpoint.c</file>
 <file filter-key="">..\include\src\LUT.c</file>
 <file filter-key="">..\include\src\tri.c</file>
+<file filter-key="">.\main.c</file>
+<file filter-key="">..\include\src\styring.c</file>
 </files>
 
 <!-- configuration information -->
