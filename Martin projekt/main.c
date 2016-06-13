@@ -4,7 +4,7 @@
 #include "tri.h";
 #include "board.h";
 #include "charset.h";
-#include "styring.c";
+#include "styring.h";
 
 char flag;
 

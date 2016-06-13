@@ -4,6 +4,7 @@
 #include "tri.h";
 #include "board.h";
 #include "charset.h";
+#include "styring.h";
 
 extern char character_data[95][5];
 char videoBuffer[5][6];

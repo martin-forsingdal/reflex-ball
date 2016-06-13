@@ -5,7 +5,13 @@
 #include "charset.h"
 #include "fixpoint.h"
 
-void reflectBallWall(Tvector *vector);
+#ifndef styring_h
+#define styring_h
+
+
+void reflectBallWall(struct Tvector *vector);
 void startBall();
-void moveBall(Tvector *vector);
-void printBall(Tvector vector);
+void moveBall(struct Tvector *vector);
+void printBall(struct Tvector vector);
+
+#endif	// styring_h
