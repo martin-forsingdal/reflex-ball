@@ -10,12 +10,12 @@ void startBall(){
   void initVector(&vector);
   }
   
-void moveBall(*Tvector vector){
+void moveBall(Tvector *vector){
   vector->a=vector->a+vector->x;
   vector->b=vector->b+vector->y;
   }
   
-void reflectBallWall(*Tvector vector){
+void reflectBallWall(Tvector *vector){
   if(vector->b>1){
     vector->x=~vector->x+1;
   }
