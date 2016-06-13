@@ -11,7 +11,7 @@ int t_s;
 
 #pragma interrupt
 void timer0int() {
-	if(t_m > 999) {
+	if(t_m > 99) {
 		t_m = 0;
 		t_s++;
 	}else
@@ -32,15 +32,12 @@ void main() {
 	window(1,1,122,39);
 	startBall(&v);
 	while(1) {
-		if(100%t_m==0) {
+		if(t_m==100) {
 			DI();
 			moveBall(&v);
 			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14)
 				reflectBallWall(&v); 
 			EI();
-			while(100%t_m==0) {
-				2+2;
-		   	}
 		}
    }
    
