@@ -6,16 +6,16 @@
 #include "fixpoint.h"
 
 void startBall(){
-  Tvector vector={1,1,25<<14,47<<14}; //virker måske 
-  void initVector(&vector);
-  }
+  struct TVector *vector; 
+  initVector(vector,1,1);
+}
   
-void moveBall(Tvector *vector){
+void moveBall(TVector *vector){
   vector->a=vector->a+vector->x;
   vector->b=vector->b+vector->y;
   }
   
-void reflectBallWall(Tvector *vector){
+void reflectBallWall(TVector *vector){
   if(vector->b>1){
     vector->x=~vector->x+1;
   }
@@ -23,7 +23,7 @@ void reflectBallWall(Tvector *vector){
     vector->y=~vector->y+1;
 }
 
-void printBall(Tvector vector){
+void printBall(TVector vector){
   int x,y;
   x=(int) ((vector->a+0x800)>>14);
   y=(int) ((vector->b+0x800)>>14);

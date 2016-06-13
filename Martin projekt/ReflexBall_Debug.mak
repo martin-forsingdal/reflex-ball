@@ -55,6 +55,8 @@ clean:
             del C:\Users\martin\Desktop\GitHub\MARTIN~1\tri.obj
 	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj  \
             del C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj
+	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\styring.obj  \
+            del C:\Users\martin\Desktop\GitHub\MARTIN~1\styring.obj
 
 rebuildall: clean Debug
 
@@ -69,7 +71,8 @@ OBJS =  \
             C:\Users\martin\Desktop\GitHub\MARTIN~1\fixpoint.obj  \
             C:\Users\martin\Desktop\GitHub\MARTIN~1\LUT.obj  \
             C:\Users\martin\Desktop\GitHub\MARTIN~1\tri.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj
+            C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj  \
+            C:\Users\martin\Desktop\GitHub\MARTIN~1\styring.obj
 
 ReflexBall: $(OBJS)
 	 $(LINK)  @C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall_Debug.linkcmd
@@ -149,4 +152,26 @@ C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj :  \
             C:\Users\martin\Desktop\GitHub\include\fixpoint.h  \
             C:\Users\martin\Desktop\GitHub\include\tri.h
 	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\MARTIN~1\main.c
+
+C:\Users\martin\Desktop\GitHub\MARTIN~1\styring.obj :  \
+            C:\Users\martin\Desktop\GitHub\include\src\styring.c  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDIO.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\defines.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\dmadefs.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\ez8.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\gpio.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\SIO.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uart.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h  \
+            C:\Users\martin\Desktop\GitHub\include\LUT.h  \
+            C:\Users\martin\Desktop\GitHub\include\ansi.h  \
+            C:\Users\martin\Desktop\GitHub\include\board.h  \
+            C:\Users\martin\Desktop\GitHub\include\charset.h  \
+            C:\Users\martin\Desktop\GitHub\include\fixpoint.h  \
+            C:\Users\martin\Desktop\GitHub\include\tri.h
+	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\include\src\styring.c
 
