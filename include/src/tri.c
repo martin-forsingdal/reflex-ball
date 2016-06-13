@@ -4,12 +4,15 @@
 //Struktur til vektorer
 struct TVector {
 	long x,y;
+	long a,b;
 };
 
 //Initialiserer en vektor til (10,20)
-void initVector(struct TVector *v, long startX, long startY) {
+void initVector(struct TVector *v, long startX, long startY, long startA, long startB) {
 	v->x = startX << 14;
 	v->y = startY << 14;
+	v->a = startA << 14;
+	v->b = startB << 14;
 }
 
 //Printer en vektor på formatet "V=(x,y)

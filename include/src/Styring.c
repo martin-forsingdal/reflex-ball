@@ -7,15 +7,15 @@
 
 void startBall(){
   struct TVector *vector; 
-  initVector(vector,1,1);
+  initVector(vector,1,1,25,47);
 }
   
-void moveBall(TVector *vector){
+void moveBall(struct TVector *vector){
   vector->a=vector->a+vector->x;
   vector->b=vector->b+vector->y;
   }
   
-void reflectBallWall(TVector *vector){
+void reflectBallWall(struct TVector *vector){
   if(vector->b>1){
     vector->x=~vector->x+1;
   }
@@ -23,10 +23,10 @@ void reflectBallWall(TVector *vector){
     vector->y=~vector->y+1;
 }
 
-void printBall(TVector vector){
+void printBall(struct TVector vector){
   int x,y;
-  x=(int) ((vector->a+0x800)>>14);
-  y=(int) ((vector->b+0x800)>>14);
-  goto(x,y);
+  x=(int) ((vector.a+0x800)>>14);
+  y=(int) ((vector.b+0x800)>>14);
+  gotoxy(x,y);
   printf("%c", 'o');
 }
