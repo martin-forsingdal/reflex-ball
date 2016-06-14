@@ -27,7 +27,7 @@ void main() {
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
 	initTimer(0x09, 0x00);
-	initConsole(2,0);
+	initConsole(5,7);
 	initButton();
 	
 	SET_VECTOR(TIMER0, timer0int);
