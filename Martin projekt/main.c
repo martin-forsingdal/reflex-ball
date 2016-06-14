@@ -19,7 +19,7 @@ void timer0int() {
 }
 
 void main() {
-	char striker = 10;
+	char striker = 57;
 	struct TVector v;
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
@@ -30,6 +30,7 @@ void main() {
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
 	window(1,1,122,39);
+	initStriker(striker);
 	startBall(&v);
 	while(1) {
 		if(t_m==100) {
@@ -37,6 +38,7 @@ void main() {
 			moveBall(&v);
 			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14)
 				reflectBallWall(&v); 
+			updateStriker(readKey(),&striker);
 			EI();
 		}
    }

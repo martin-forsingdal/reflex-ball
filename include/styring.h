@@ -12,5 +12,7 @@
 void reflectBallWall(struct TVector *vector);
 void startBall(struct TVector *vector);
 void moveBall(struct TVector *vector);
+void updateStriker(char readKey, char *striker);
+void initStriker(char striker);
 
 #endif	// styring_h

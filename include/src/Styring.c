@@ -5,7 +5,11 @@
 #include "fixpoint.h"
 
 void startBall(struct TVector *vector){
+<<<<<<< Updated upstream
 	initVector(vector,0xffffffff,0xffffffff,39,7); 
+=======
+	initVector(vector,0xffffffff,0xffffffff,61,39); 
+>>>>>>> Stashed changes
 }
 
 void moveBall(struct TVector *vector){
@@ -26,5 +30,31 @@ void reflectBallWall(struct TVector *vector){
   }
   else
     (vector->y)=(~(vector->y)+1);
+}
+
+void updateStriker(char c, char *striker) {
+	if(c==0x01) {
+		gotoxy(*striker,40);
+		printf("%c",' ');
+		*striker = *striker + 1;
+		gotoxy(*striker+8,40);
+		printf("%c",223);
+	} else if(c==0x02) {
+		gotoxy(*striker+8,40);
+		printf("%c",' ');
+		*striker = *striker -1;
+		gotoxy(*striker,40);
+		printf("%c",223);
+	}
+	gotoxy(2,2);
+	printf("%d",*striker);
+}
+
+void initStriker(char striker) {
+	char i;
+	gotoxy(striker,40);
+	for(i=0;i<9;i++) {
+		printf("%c",223);
+	}
 }
 
