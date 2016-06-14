@@ -4,7 +4,7 @@ Copyright (C) 1999-2004 ZiLOG, Inc. All Rights Reserved
 
 LINK MAP:
 
-DATE:      Tue Jun 14 11:13:07 2016
+DATE:      Tue Jun 14 11:18:02 2016
 PROCESSOR: assembler
 FILES:     C:\PROGRA~2\ZiLOG\ZDSII_~1.3\lib\zilog\startupL.obj
            .\zsldevinit.obj
@@ -227,7 +227,7 @@ Module: ..\UART\COMMON\WRITEUART0.C (Library: zslLYD.lib) Version: 1:0 02/23/200
     Segment: teuart0_TEXT                        C:2CFD      C:2DB6       bah
 
 
-Module: .\MAIN.C (File: main.obj) Version: 1:0 06/14/2016 11:13:06
+Module: .\MAIN.C (File: main.obj) Version: 1:0 06/14/2016 11:18:01
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
