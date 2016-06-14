@@ -131,24 +131,30 @@ void tileCheck(char levelArray[11][24], struct TVector *vector) {
 	x = (vector->a + 0x8000) >> 14; //Muligvis behov for char conversion.
 	y = (vector->b + 0x8000) >> 14;
 	k=x/5;
-	if(levelArray[y - 5][k-2]!= '/0') {
-		(vector->y)=(~(vector->y)+1);
-		tileUpdate(levelArray,y-5,k-2);
-	}
-	else if(levelArray[y-3][k-2]!='/0'){
-		(vector->y)=(~(vector->y)+1);
-		tileUpdate(levelArray,y-3,k-2);
-	}
-	else if(levelArray[y-4][k-1]!= '/0'){
-		(vector->x)=(~(vector->x)+1);
-		tileUpdate(levelArray,y-4,k-1);
-	}
+	if(y==15){
+		if(levelArray[y - 5][k-2]!= '/0') {
+			(vector->y)=(~(vector->y)+1);
+			tileUpdate(levelArray,y-5,k-2);
+		}
+	else{
+		if(levelArray[y - 5][k-2]!= '/0') {
+			(vector->y)=(~(vector->y)+1);
+			tileUpdate(levelArray,y-5,k-2);
+		}
+		else if(levelArray[y-3][k-2]!='/0'){
+			(vector->y)=(~(vector->y)+1);
+			tileUpdate(levelArray,y-3,k-2);
+		}
+		else if(levelArray[y-4][k-1]!= '/0'){
+			(vector->x)=(~(vector->x)+1);
+			tileUpdate(levelArray,y-4,k-1);
+		}
 
-	else if(levelArray[y-4][k-3]!= '/0'){
-		(vector->x)=(~(vector->x)+1);
-		tileUpdate(levelArray,y-4,k-3);
+		else if(levelArray[y-4][k-3]!= '/0'){
+			(vector->x)=(~(vector->x)+1);
+			tileUpdate(levelArray,y-4,k-3);
+		}
 	}
-
 }
 
 
