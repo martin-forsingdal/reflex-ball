@@ -64,18 +64,18 @@ void levelThree(char tilesThree[11][24]){
 	}
 }
 
-void printLevel(char levelArray[11][24]){
+void printLevel(unsigned char levelArray[11][24]){
 	char i=0x00;
 	char j=0x00;
 	gotoxy(2,4);
 	for(i=0;i<11;i++){
 		for(j=0;j<24;j++){
 			gotoxy(2+5*j,4+i);
-			if(levelArray[i][j]==0x00){
+			if(levelArray[i][j]=='\0'){
 				printf("%c%c%c%c%c", ' ', ' ', ' ', ' ', ' ');
 			}
 			else{
-				switch(levelArray[i][j]){
+				switch(levelArray[i][j]) {
 					case 219:
  				    	fgcolor(8);
 						printf("%c%c%c%c%c", 219, 219, 219, 219, 219);

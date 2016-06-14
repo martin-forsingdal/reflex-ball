@@ -5,6 +5,7 @@
 #include "board.h";
 #include "charset.h";
 #include "styring.h";
+#include "tiles.h";
 
 int t_1;
 int t_2;
@@ -24,17 +25,20 @@ void timer0int() {
 void main() {
 	long striker = 57;
 	struct TVector v;
+	char tilearray[11][24];
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
 	initTimer(0x09, 0x00);
 	initConsole(5,7);
 	initButton();
+	levelThree(tilearray);
 	
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
 	window(1,1,122,40);
 	initStriker(striker);
 	startBall(&v);
+	printLevel(tilearray);
 	while(1) {
 		if(t_1==20) {
 			DI();

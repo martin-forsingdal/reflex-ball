@@ -11,6 +11,7 @@
 <file filter-key="">..\include\src\styring.c</file>
 <file filter-key="">..\include\src\tri.c</file>
 <file filter-key="">.\main.c</file>
+<file filter-key="">..\include\src\tiles.c</file>
 </files>
 
 <!-- configuration information -->
