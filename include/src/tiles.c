@@ -1,4 +1,5 @@
-#include "ansi.h";
+#include "ansi.h"
+#include "tri.h"
 
 void initTileArray(char tilesNumber[11][24]) {
 	char i,j;
@@ -101,6 +102,56 @@ void printLevel(unsigned char levelArray[11][24]){
 		}
 	}
 }
+
+void tileUpdate(char levelArray[11][24], int x, int y){
+	switch(levelArray[y][x]){
+		case 219:
+			break;
+		case 178:
+			levelArray[y][x]--;
+			gotoxy(y+4,x*5+2);
+			printf("%c%c%c%c%c", 177,177,177,177,177);
+			break;
+		case 177:
+			levelArray[y][x]--;
+			gotoxy(y+4,x*5+2);
+			printf("%c%c%c%c%c", 176,176,176,176,176);
+			break;
+		case 176:
+			levelArray[y][x]='/0';
+			gotoxy(y+4,x*5+2);
+			printf("%c%c%c%c%c", ' ',' ',' ',' ',' ');
+			break;
+	}
+}
+
+void tileCheck(char levelArray[11][24], struct TVector *vector) {
+	unsigned char x,y;
+	int k;
+	x = (vector->a + 0x8000) >> 14; //Muligvis behov for char conversion.
+	y = (vector->b + 0x8000) >> 14;
+	k=x/5;
+	if(levelArray[y - 5][k-2]!= '/0') {
+		(vector->y)=(~(vector->y)+1);
+		tileUpdate(levelArray,y-5,k-2);
+	}
+	else if(levelArray[y-3][k-2]!='/0'){
+		(vector->y)=(~(vector->y)+1);
+		tileUpdate(levelArray,y-3,k-2);
+	}
+	else if(levelArray[y-4][k-1]!= '/0'){
+		(vector->x)=(~(vector->x)+1);
+		tileUpdate(levelArray,y-4,k-1);
+	}
+
+	else if(levelArray[y-4][k-3]!= '/0'){
+		(vector->x)=(~(vector->x)+1);
+		tileUpdate(levelArray,y-4,k-3);
+	}
+
+}
+
+
 
 
 
