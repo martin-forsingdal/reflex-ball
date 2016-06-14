@@ -1,4 +1,4 @@
-
+#include "ansi.h";
 
 void levelOne(char tilesOne[11][24]) {
 	char i = 0x00;
@@ -47,6 +47,40 @@ void levelThree(char tilesThree[11][24]){
 			}
 			else{
 				tilesThree[i][j]=178;
+			}
+		}
+	}
+}
+
+void printLevel(char levelArray[11][24]){
+	char i=0x00;
+	char j=0x00;
+	gotoxy(2,4);
+	for(i=0;i<11;i++){
+		for(j=0;j<24;j++){
+			gotoxy(2+5*j,4+i);
+			if(levelArray[i][j]==0x00){
+				printf("%c%c%c%c%c", ' ', ' ', ' ', ' ', ' ');
+			}
+			else{
+				switch(levelArray[i][j]){
+					case 219:
+ 				    	fgcolor(8);
+						printf("%c%c%c%c%c", 219, 219, 219, 219, 219);
+						break;
+					case 178:
+						fgcolor(1);
+						printf("%c%c%c%c%c", 178, 178, 178, 178, 178);
+						break;
+					case 177:
+						fgcolor(5);
+						printf("%c%c%c%c%c", 177, 177, 177, 177, 177);
+						break;
+					case 176:
+						fgcolor(4);
+						printf("%c%c%c%c%c", 176, 176, 176, 176, 176);
+						break;
+				}
 			}
 		}
 	}
