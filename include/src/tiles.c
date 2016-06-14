@@ -37,6 +37,21 @@ void levelTwo(char tilesTwo[11][24]) {
 	}
 }
 
-void levelThree
+void levelThree(char tilesThree[11][24]){
+	char i=0x00;
+	char j=0x00;
+	for(i=0;i<11;i++){
+		for(j=0;j<24;j++){
+			if(i%2==0 && j%2==0){
+				tilesThree[i][j]=219;
+			}
+			else{
+				tilesThree[i][j]=178;
+			}
+		}
+	}
+}
+
+
 
 
