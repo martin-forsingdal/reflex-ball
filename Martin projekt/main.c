@@ -47,8 +47,6 @@ void main() {
 			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14) {
 				reflectBallWall(&v); 
 			}else if(v.a>=striker<<14 && v.a<striker+9<<14 && v.b==39<<14 && v.y>0) {
-				gotoxy(2,3);
-				printf("%s","indenfor striker");
 				reflectStriker(&v);
 			}
 			moveBall(&v);
