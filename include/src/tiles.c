@@ -1,7 +1,7 @@
 #include "ansi.h"
 #include "tri.h"
 
-void initTileArray(char tilesNumber[11][24]) {
+void initTileArray(unsigned char tilesNumber[11][24]) {
 	char i,j;
 	for(i = 0x00; i < 11; i++) {
 		for(j = 0x00; j < 24; j++) {
@@ -10,7 +10,7 @@ void initTileArray(char tilesNumber[11][24]) {
 	}
 }
 
-void levelOne(char tilesOne[11][24]) {
+void levelOne(unsigned char tilesOne[11][24]) {
 	char i = 0x00;
 	char j = 0x00;
 	char k = 0x00;
@@ -27,7 +27,7 @@ void levelOne(char tilesOne[11][24]) {
 	
 }
 
-void levelTwo(char tilesTwo[11][24]) {
+void levelTwo(unsigned char tilesTwo[11][24]) {
 	char i=0x00;
 	char j=0x00;
 	initTileArray(tilesTwo);
@@ -49,7 +49,7 @@ void levelTwo(char tilesTwo[11][24]) {
 	}
 }
 
-void levelThree(char tilesThree[11][24]){
+void levelThree(unsigned char tilesThree[11][24]){
 	char i=0x00;
 	char j=0x00;
 	initTileArray(tilesThree);
@@ -103,7 +103,7 @@ void printLevel(unsigned char levelArray[11][24]){
 	}
 }
 
-void tileUpdate(unsigned char levelArray[11][24], int x, int y){
+void tileUpdate(unsigned char levelArray[11][24], int y, int x){
 	switch(levelArray[y][x]){
 		case 178:
 			levelArray[y][x]--;
