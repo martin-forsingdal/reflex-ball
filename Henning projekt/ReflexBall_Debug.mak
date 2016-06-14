@@ -18,43 +18,44 @@ LIB = @C:\PROGRA~2\ZiLOG\ZDSII_~1.3\bin\eZ8lib
 #   -optsize -peephole -NOpromote -quiet -regvar -revaa -NOsdiopt
 #   -shortsize:16
 #   -stdinc:"C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std;C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog;C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\Z8Encore_F640X"
-#   -strict -usrinc:"C:\Users\martin\Desktop\GitHub\include" -NOwatch
-#   -cpu:Z8F6403
+#   -strict -usrinc:"C:\REFLEX~1\include" -NOwatch -cpu:Z8F6403
 #   -asmsw:" -cpu:Z8F6403 -define:_Z8F6403=1 -define:_Z8ENCORE_640_FAMILY=1 -define:_Z8ENCORE_F640X=1 -define:_MODEL_LARGE=1 -include:C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std;C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog;C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\Z8Encore_F640X -revaa"
-CFLAGS = -sw:C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall_Debug.ccsw
+CFLAGS = -sw:C:\REFLEX~1\HENNIN~1\ReflexBall_Debug.ccsw
 # assembler options
 #   -debug -define:_Z8F6403=1 -define:_Z8ENCORE_640_FAMILY=1
 #   -define:_Z8ENCORE_F640X=1 -define:_MODEL_LARGE=1 -genobj -NOigcase
 #   -include:"C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std;C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog;C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\Z8Encore_F640X"
 #   -list -NOlistmac -name -pagelen:56 -pagewidth:80 -quiet -sdiopt
 #   -warn -NOzmasm -revaa -cpu:Z8F6403
-AFLAGS = -sw:C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall_Debug.asmsw
+AFLAGS = -sw:C:\REFLEX~1\HENNIN~1\ReflexBall_Debug.asmsw
 
-OUTDIR = C:\Users\martin\Desktop\GitHub\MARTIN~1\
+OUTDIR = C:\REFLEX~1\HENNIN~1\
 
 Debug: ReflexBall
 
 deltarget: 
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall.lod  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall.lod
+	@if exist C:\REFLEX~1\HENNIN~1\ReflexBall.lod  \
+            del C:\REFLEX~1\HENNIN~1\ReflexBall.lod
 
 clean: 
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall.lod  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall.lod
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\zsldevinit.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\zsldevinit.obj
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\ansi.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\ansi.obj
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\board.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\board.obj
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\fixpoint.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\fixpoint.obj
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\LUT.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\LUT.obj
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\tri.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\tri.obj
-	@if exist C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj  \
-            del C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj
+	@if exist C:\REFLEX~1\HENNIN~1\ReflexBall.lod  \
+            del C:\REFLEX~1\HENNIN~1\ReflexBall.lod
+	@if exist C:\REFLEX~1\HENNIN~1\zsldevinit.obj  \
+            del C:\REFLEX~1\HENNIN~1\zsldevinit.obj
+	@if exist C:\REFLEX~1\HENNIN~1\ansi.obj  \
+            del C:\REFLEX~1\HENNIN~1\ansi.obj
+	@if exist C:\REFLEX~1\HENNIN~1\board.obj  \
+            del C:\REFLEX~1\HENNIN~1\board.obj
+	@if exist C:\REFLEX~1\HENNIN~1\fixpoint.obj  \
+            del C:\REFLEX~1\HENNIN~1\fixpoint.obj
+	@if exist C:\REFLEX~1\HENNIN~1\LUT.obj  \
+            del C:\REFLEX~1\HENNIN~1\LUT.obj
+	@if exist C:\REFLEX~1\HENNIN~1\tri.obj  \
+            del C:\REFLEX~1\HENNIN~1\tri.obj
+	@if exist C:\REFLEX~1\HENNIN~1\main.obj  \
+            del C:\REFLEX~1\HENNIN~1\main.obj
+	@if exist C:\REFLEX~1\HENNIN~1\tiles.obj  \
+            del C:\REFLEX~1\HENNIN~1\tiles.obj
 
 rebuildall: clean Debug
 
@@ -63,25 +64,26 @@ relink: deltarget Debug
 LIBS = 
 
 OBJS =  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\zsldevinit.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\ansi.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\board.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\fixpoint.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\LUT.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\tri.obj  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj
+            C:\REFLEX~1\HENNIN~1\zsldevinit.obj  \
+            C:\REFLEX~1\HENNIN~1\ansi.obj  \
+            C:\REFLEX~1\HENNIN~1\board.obj  \
+            C:\REFLEX~1\HENNIN~1\fixpoint.obj  \
+            C:\REFLEX~1\HENNIN~1\LUT.obj  \
+            C:\REFLEX~1\HENNIN~1\tri.obj  \
+            C:\REFLEX~1\HENNIN~1\main.obj  \
+            C:\REFLEX~1\HENNIN~1\tiles.obj
 
 ReflexBall: $(OBJS)
-	 $(LINK)  @C:\Users\martin\Desktop\GitHub\MARTIN~1\ReflexBall_Debug.linkcmd
+	 $(LINK)  @C:\REFLEX~1\HENNIN~1\ReflexBall_Debug.linkcmd
 
-C:\Users\martin\Desktop\GitHub\MARTIN~1\zsldevinit.obj :  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\zsldevinit.asm  \
+C:\REFLEX~1\HENNIN~1\zsldevinit.obj :  \
+            C:\REFLEX~1\HENNIN~1\zsldevinit.asm  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\ez8dev.inc  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\gpio.inc
-	 $(ASM)  $(AFLAGS) C:\Users\martin\Desktop\GitHub\MARTIN~1\zsldevinit.asm
+	 $(ASM)  $(AFLAGS) C:\REFLEX~1\HENNIN~1\zsldevinit.asm
 
-C:\Users\martin\Desktop\GitHub\MARTIN~1\ansi.obj :  \
-            C:\Users\martin\Desktop\GitHub\include\src\ansi.c  \
+C:\REFLEX~1\HENNIN~1\ansi.obj :  \
+            C:\REFLEX~1\include\src\ansi.c  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDIO.H  \
@@ -94,10 +96,44 @@ C:\Users\martin\Desktop\GitHub\MARTIN~1\ansi.obj :  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\SIO.H  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uart.h  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h
-	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\include\src\ansi.c
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\include\src\ansi.c
 
-C:\Users\martin\Desktop\GitHub\MARTIN~1\board.obj :  \
-            C:\Users\martin\Desktop\GitHub\include\src\board.c  \
+C:\REFLEX~1\HENNIN~1\board.obj :  \
+            C:\REFLEX~1\include\src\board.c  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDIO.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\defines.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\dmadefs.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\ez8.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\gpio.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\SIO.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uart.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\include\src\board.c
+
+C:\REFLEX~1\HENNIN~1\fixpoint.obj :  \
+            C:\REFLEX~1\include\src\fixpoint.c
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\include\src\fixpoint.c
+
+C:\REFLEX~1\HENNIN~1\LUT.obj :  \
+            C:\REFLEX~1\include\src\LUT.c
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\include\src\LUT.c
+
+C:\REFLEX~1\HENNIN~1\tri.obj :  \
+            C:\REFLEX~1\include\src\tri.c  \
+            C:\REFLEX~1\include\LUT.h  \
+            C:\REFLEX~1\include\fixpoint.h
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\include\src\tri.c
+
+C:\REFLEX~1\HENNIN~1\main.obj :  \
+            C:\REFLEX~1\HENNIN~1\main.c
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\HENNIN~1\main.c
+
+C:\REFLEX~1\HENNIN~1\tiles.obj :  \
+            C:\REFLEX~1\include\src\tiles.c  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDIO.H  \
@@ -110,43 +146,6 @@ C:\Users\martin\Desktop\GitHub\MARTIN~1\board.obj :  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\SIO.H  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uart.h  \
             C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h  \
-            C:\Users\martin\Desktop\GitHub\include\ansi.h
-	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\include\src\board.c
-
-C:\Users\martin\Desktop\GitHub\MARTIN~1\fixpoint.obj :  \
-            C:\Users\martin\Desktop\GitHub\include\src\fixpoint.c
-	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\include\src\fixpoint.c
-
-C:\Users\martin\Desktop\GitHub\MARTIN~1\LUT.obj :  \
-            C:\Users\martin\Desktop\GitHub\include\src\LUT.c  \
-            C:\Users\martin\Desktop\GitHub\include\LUT.h
-	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\include\src\LUT.c
-
-C:\Users\martin\Desktop\GitHub\MARTIN~1\tri.obj :  \
-            C:\Users\martin\Desktop\GitHub\include\src\tri.c  \
-            C:\Users\martin\Desktop\GitHub\include\LUT.h  \
-            C:\Users\martin\Desktop\GitHub\include\fixpoint.h
-	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\include\src\tri.c
-
-C:\Users\martin\Desktop\GitHub\MARTIN~1\main.obj :  \
-            C:\Users\martin\Desktop\GitHub\MARTIN~1\main.c  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDIO.H  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\defines.h  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\dmadefs.h  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\ez8.h  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\gpio.h  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\SIO.H  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uart.h  \
-            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h  \
-            C:\Users\martin\Desktop\GitHub\include\LUT.h  \
-            C:\Users\martin\Desktop\GitHub\include\ansi.h  \
-            C:\Users\martin\Desktop\GitHub\include\board.h  \
-            C:\Users\martin\Desktop\GitHub\include\charset.h  \
-            C:\Users\martin\Desktop\GitHub\include\fixpoint.h  \
-            C:\Users\martin\Desktop\GitHub\include\tri.h
-	 $(CC)  $(CFLAGS) C:\Users\martin\Desktop\GitHub\MARTIN~1\main.c
+            C:\REFLEX~1\include\ansi.h
+	 $(CC)  $(CFLAGS) C:\REFLEX~1\include\src\tiles.c
 
