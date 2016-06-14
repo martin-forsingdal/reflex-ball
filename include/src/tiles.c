@@ -13,10 +13,4 @@ void levelOne(char tilesOne[11][24]) {
 			k=0;
 		}
 	}
-	
-	
-	printf("Række 0: %c",tilesOne[0][5]);
-	printf("Række 1: %c",tilesOne[1][5]);
-	printf("Række 2: %c",tilesOne[2][5]);
-
 }
