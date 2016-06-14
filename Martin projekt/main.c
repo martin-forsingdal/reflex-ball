@@ -31,7 +31,7 @@ void main() {
 	initTimer(0x09, 0x00);
 	initConsole(5,7);
 	initButton();
-	levelThree(tilearray);
+	levelOne(tilearray);
 	
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
