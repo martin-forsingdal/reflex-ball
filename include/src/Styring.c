@@ -4,13 +4,16 @@
 #include "board.h"
 #include "fixpoint.h"
 
+//initialiserer en vektor for bolden, med retning og hastighed.
+
 void startBall(struct TVector *vector){
-<<<<<<< Updated upstream
-	initVector(vector,0xffffffff,0xffffffff,39,7); 
-=======
+
 	initVector(vector,0xffffffff,0xffffffff,61,39); 
->>>>>>> Stashed changes
+
 }
+
+/*flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et
+mellemrum på boldens tidligere position.*/
 
 void moveBall(struct TVector *vector){
   	int x,y;
@@ -24,13 +27,18 @@ void moveBall(struct TVector *vector){
 	printf("%c", 'o');
   	}
   
+/*reflekterer bolden når den rammer murene. Hvis y koordinaten er større end 2 har den ramt en af siderne, ellers har den ramt toppen. 
+Derefter inverteres enten x- eller y-koordinaten.*/
+
 void reflectBallWall(struct TVector *vector){
-  if((vector->b)>(2<<14)){
-    (vector->x)=(~(vector->x)+1);
-  }
-  else
-    (vector->y)=(~(vector->y)+1);
+ 	if((vector->b)>(2<<14)){
+    	(vector->x)=(~(vector->x)+1);
+  	}
+  	else
+    	(vector->y)=(~(vector->y)+1);
 }
+
+
 
 void updateStriker(char c, char *striker) {
 	if(c==0x01) {
