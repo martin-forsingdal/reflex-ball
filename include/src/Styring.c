@@ -5,7 +5,7 @@
 #include "fixpoint.h"
 
 void startBall(struct TVector *vector){
-	initVector(vector,0xffffffff,0x00000000,30,15); 
+	initVector(vector,0xffffffff,0xffffffff,39,7); 
 }
 
 void moveBall(struct TVector *vector){

@@ -1,14 +1,10 @@
-#include <ez8.h>
-#include <sio.h>
-#include "tri.h"
-#include "ansi.h"
-#include "styring.h"
 #include "tiles.h"
 
 void main() {
-	char *tilesOne;
+	
+	char tilesOne[11][24];
 	levelOne(tilesOne);
 
-	do {} while(1);
+	do {} while (1);
 }
 
