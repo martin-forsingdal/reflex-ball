@@ -68,11 +68,16 @@ void printLevel(unsigned char levelArray[11][24]){
 	int color[4] = {1,2,4,5};
 	char i=0x00;
 	char j=0x00;
+	char k=0x00;
 	gotoxy(2,4);
 	for(i=0;i<11;i++){
 		for(j=0;j<24;j++){
 			gotoxy(2+5*j,4+i);
-			fgcolor(color[i+j]);
+			fgcolor(color[k]);
+			k++;
+			if(k == 4) {
+				k = 0;
+			}
 			if(levelArray[i][j]=='\0'){
 				printf("%c%c%c%c%c", ' ', ' ', ' ', ' ', ' ');
 			}
