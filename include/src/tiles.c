@@ -103,10 +103,8 @@ void printLevel(unsigned char levelArray[11][24]){
 	}
 }
 
-void tileUpdate(char levelArray[11][24], int x, int y){
+void tileUpdate(unsigned char levelArray[11][24], int x, int y){
 	switch(levelArray[y][x]){
-		case 219:
-			break;
 		case 178:
 			levelArray[y][x]--;
 			gotoxy(y+4,x*5+2);
@@ -122,10 +120,12 @@ void tileUpdate(char levelArray[11][24], int x, int y){
 			gotoxy(y+4,x*5+2);
 			printf("%c%c%c%c%c", ' ',' ',' ',' ',' ');
 			break;
+	    default:
+			break;
 	}
 }
 
-void tileCheck(char levelArray[11][24], struct TVector *vector) {
+void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	unsigned char x,y;
 	int k;
 	x = (vector->a + 0x8000) >> 14; //Muligvis behov for char conversion.
@@ -136,6 +136,13 @@ void tileCheck(char levelArray[11][24], struct TVector *vector) {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k-2);
 		}
+	}
+	else if(y==3){
+			if(levelArray[y-3][k-2]!='/0'){
+			(vector->y)=(~(vector->y)+1);
+			tileUpdate(levelArray,y-3,k-2);
+		}
+	}
 	else{
 		if(levelArray[y - 5][k-2]!= '/0') {
 			(vector->y)=(~(vector->y)+1);
