@@ -162,6 +162,19 @@ C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\styring.obj :  \
 	 $(CC)  $(CFLAGS) C:\Users\Jonas\Documents\reflex-ball\include\src\styring.c
 
 C:\Users\Jonas\DOCUME~1\REFLEX~1\JONASP~1\tiles.obj :  \
-            C:\Users\Jonas\Documents\reflex-ball\include\src\tiles.c
+            C:\Users\Jonas\Documents\reflex-ball\include\src\tiles.c  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDIO.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\FORMAT.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\std\STDARG.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\defines.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\dmadefs.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\ez8.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\gpio.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\SIO.H  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uart.h  \
+            C:\PROGRA~2\ZiLOG\ZDSII_~1.3\include\zilog\uartdefs.h  \
+            C:\Users\Jonas\DOCUME~1\REFLEX~1\include\ansi.h
 	 $(CC)  $(CFLAGS) C:\Users\Jonas\Documents\reflex-ball\include\src\tiles.c
 
