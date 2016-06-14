@@ -7,7 +7,7 @@
 //initialiserer en vektor for bolden, med retning og hastighed.
 
 void startBall(struct TVector *vector){
-	initVector(vector,0xb5,0xb5,61,39); 
+	initVector(vector,0xea,0x68,61,37);
 }
 
 /*flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et
@@ -15,6 +15,8 @@ mellemrum på boldens tidligere position.*/
 
 void moveBall(struct TVector *vector){
   	int x,y;
+	gotoxy(2,2);
+	printf("%d",vector->b>>14);
 	gotoxy(vector->a+0x8000>>14,vector->b+0x8000>>14);
 	printf("%c",' ');
 	vector->a=vector->a+vector->x;
