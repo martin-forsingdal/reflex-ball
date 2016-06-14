@@ -7,9 +7,13 @@
 //initialiserer en vektor for bolden, med retning og hastighed.
 
 void startBall(struct TVector *vector){
+<<<<<<< Updated upstream
 
 	initVector(vector,0xffffffff,0xffffffff,61,39); 
 
+=======
+	initVector(vector,0xffffffff,0xffffffff,61,39); 
+>>>>>>> Stashed changes
 }
 
 /*flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et
@@ -38,27 +42,30 @@ void reflectBallWall(struct TVector *vector){
     	(vector->y)=(~(vector->y)+1);
 }
 
+<<<<<<< Updated upstream
 
 
 void updateStriker(char c, char *striker) {
 	if(c==0x01) {
+=======
+void updateStriker(char c, long *striker) {
+	if(c==0x01 && *striker < 113) {
+>>>>>>> Stashed changes
 		gotoxy(*striker,40);
 		printf("%c",' ');
 		*striker = *striker + 1;
 		gotoxy(*striker+8,40);
 		printf("%c",223);
-	} else if(c==0x02) {
+	} else if(c==0x02 && *striker > 2) {
 		gotoxy(*striker+8,40);
 		printf("%c",' ');
 		*striker = *striker -1;
 		gotoxy(*striker,40);
 		printf("%c",223);
 	}
-	gotoxy(2,2);
-	printf("%d",*striker);
 }
 
-void initStriker(char striker) {
+void initStriker(long striker) {
 	char i;
 	gotoxy(striker,40);
 	for(i=0;i<9;i++) {
@@ -66,3 +73,6 @@ void initStriker(char striker) {
 	}
 }
 
+void reflectStriker(struct TVector *vector) {
+	(vector->y)=(~(vector->y)+1);
+}

@@ -6,20 +6,23 @@
 #include "charset.h";
 #include "styring.h";
 
-int t_m;
-int t_s;
+int t_1;
+int t_2;
 
 #pragma interrupt
 void timer0int() {
-	if(t_m > 99) {
-		t_m = 0;
-		t_s++;
+	if(t_1 > 19) {
+		t_1 = 0;
 	}else
-	t_m++;
+	t_1++;
+	if(t_2>39) {
+		t_2=0;
+	}else
+	t_2++;
 }
 
 void main() {
-	char striker = 57;
+	long striker = 57;
 	struct TVector v;
 	init_uart(_UART0,_DEFFREQ,_DEFBAUD);
 
@@ -29,16 +32,26 @@ void main() {
 	
 	SET_VECTOR(TIMER0, timer0int);
 	EI();
-	window(1,1,122,39);
+	window(1,1,122,40);
 	initStriker(striker);
 	startBall(&v);
 	while(1) {
-		if(t_m==100) {
+		if(t_1==20) {
 			DI();
-			moveBall(&v);
-			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14)
-				reflectBallWall(&v); 
 			updateStriker(readKey(),&striker);
+			EI();
+		}
+		if(t_2==40) {
+			DI();
+			
+			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14) {
+				reflectBallWall(&v); 
+			}else if(v.a>=striker<<14 && v.a<striker+9<<14 && v.b==39<<14 && v.y>0) {
+				gotoxy(2,3);
+				printf("%s","indenfor striker");
+				reflectStriker(&v);
+			}
+			moveBall(&v);
 			EI();
 		}
    }
