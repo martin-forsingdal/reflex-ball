@@ -48,7 +48,7 @@ void main() {
 		if(t_2==40) {
 			DI();
 			
-			if(v.a==2<<14 || v.a==119<<14 || v.b ==2<<14) {
+			if(v.a<3<<14 || v.a>120<<14 || v.b<3<<14) {
 				reflectBallWall(&v); 
 			}else if(v.a>=striker<<14 && v.a<striker+9<<14 && v.b==39<<14 && v.y>0) {
 				reflectStriker(&v);
