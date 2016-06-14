@@ -103,21 +103,21 @@ void printLevel(unsigned char levelArray[11][24]){
 	}
 }
 
-void tileUpdate(unsigned char levelArray[11][24], int y, int x){
-	switch(levelArray[y][x]){
+void tileUpdate(unsigned char levelArray[11][24], int i, int j){
+	switch(levelArray[i][j]){
 		case 178:
-			levelArray[y][x]--;
-			gotoxy(y+4,x*5+2);
+			levelArray[i][j]--;
+			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", 177,177,177,177,177);
 			break;
 		case 177:
-			levelArray[y][x]--;
-			gotoxy(y+4,x*5+2);
+			levelArray[i][j]--;
+			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", 176,176,176,176,176);
 			break;
 		case 176:
-			levelArray[y][x]='/0';
-			gotoxy(y+4,x*5+2);
+			levelArray[i][j]='/0';
+			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", ' ',' ',' ',' ',' ');
 			break;
 	    default:
