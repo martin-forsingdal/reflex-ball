@@ -7,6 +7,7 @@
 struct TVector {
 	long x,y;
 	long a,b;
+	unsigned int angle;
 };
 
 //long sin(int theta);

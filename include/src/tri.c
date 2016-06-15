@@ -7,6 +7,7 @@ struct TVector {
 	long y;
 	long a;
 	long b;
+	unsigned int angle;
 };
 
 //Printer en vektor på formatet "V=(x,y)
@@ -39,9 +40,10 @@ void rotate(struct TVector *v, int theta) {
 
 //Initialiserer en vektor
 void initVector(struct TVector *v, int theta, long startA, long startB) {
-	(v->x) = cos(theta);
-	(v->y) = sin(theta);
+	(v->x) = cos(theta+384);
+	(v->y) = sin(theta+384);
 	(v->a) = (startA << 14);
 	(v->b) = (startB << 14);
+	(v->angle) = theta;
 }
 
