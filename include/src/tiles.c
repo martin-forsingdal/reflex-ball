@@ -137,31 +137,37 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 		if(levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
+			vector->angle-=256;
 		}
 	}
 	else if(y==3){
 			if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219 ){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
+			vector->angle-=256;
 		}
 	}
 	else{
 		if(levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219)  {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
+			vector->angle-=256;
 		}
 		if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
+			vector->angle+=256;
 		}
 		if(levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,l);
+			vector->angle=256-(0x1ff&vector->angle);
 		}
 
 		if(levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,m);
+			vector->angle=256-(0x1ff&vector->angle);
 		}
 	}
 }
