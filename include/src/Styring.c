@@ -17,12 +17,12 @@ void moveBall(struct TVector *vector){
   	int x,y;
 	gotoxy(2,2);
 	printf("%d",vector->b>>14);
-	gotoxy(vector->a+0x1000>>14,vector->b+0x1000>>14);
+	gotoxy(vector->a+0x2000>>14,vector->b+0x2000>>14);
 	printf("%c",' ');
 	vector->a=vector->a+vector->x;
   	vector->b=vector->b+vector->y;
-	x=(int) ((vector->a+0x1000)>>14);
-	y=(int) ((vector->b+0x1000)>>14);
+	x=(int) ((vector->a+0x2000)>>14);
+	y=(int) ((vector->b+0x2000)>>14);
 	gotoxy(x,y);
 	printf("%c", 'o');
   	}

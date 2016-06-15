@@ -128,8 +128,8 @@ void tileUpdate(unsigned char levelArray[11][24], int i, int j){
 void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	unsigned char x,y;
 	int k, l, m;
-	x = (vector->a + 0x1000) >> 14;
-	y = (vector->b + 0x1000) >> 14;
+	x = (vector->a + 0x2000) >> 14;
+	y = (vector->b + 0x2000) >> 14;
 	k=(x-2)/5;
 	l=(x-1)/5;
 	m=(x-3)/5;
