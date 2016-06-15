@@ -166,6 +166,16 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	}
 }
 
+void printTileArray(unsigned char levelArray[11][24]) {
+	char i,j;
+	for(i=0;i<24;i++) {
+		for(j=0;j<11;j++) {
+			gotoxy(20+i,20+j);
+			printf("%c",levelArray[j][i]);
+		}
+	}	
+}
+
 
 
 
