@@ -127,39 +127,41 @@ void tileUpdate(unsigned char levelArray[11][24], int i, int j){
 
 void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	unsigned char x,y;
-	int k;
+	int k, l, m;
 	x = (vector->a + 0x8000) >> 14; //Muligvis behov for char conversion.
 	y = (vector->b + 0x8000) >> 14;
-	k=x/5;
+	k=(x-2)/5;
+	l=(x-1)/5;
+	m=(x-3)/5;
 	if(y==15){
-		if(levelArray[y - 5][k-2]!= '/0') {
+		if(levelArray[y - 5][k]!= '/0') {
 			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-5,k-2);
+			tileUpdate(levelArray,y-5,k);
 		}
 	}
 	else if(y==3){
-			if(levelArray[y-3][k-2]!='/0'){
+			if(levelArray[y-3][k]!='/0'){
 			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-3,k-2);
+			tileUpdate(levelArray,y-3,k);
 		}
 	}
 	else{
-		if(levelArray[y - 5][k-2]!= '/0') {
+		if(levelArray[y - 5][k]!= '/0') {
 			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-5,k-2);
+			tileUpdate(levelArray,y-5,k);
 		}
-		else if(levelArray[y-3][k-2]!='/0'){
+		else if(levelArray[y-3][k]!='/0'){
 			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-3,k-2);
+			tileUpdate(levelArray,y-3,k);
 		}
-		else if(levelArray[y-4][k-1]!= '/0'){
+		else if(levelArray[y-4][l]!= '/0'){
 			(vector->x)=(~(vector->x)+1);
-			tileUpdate(levelArray,y-4,k-1);
+			tileUpdate(levelArray,y-4,l);
 		}
 
-		else if(levelArray[y-4][k-3]!= '/0'){
+		else if(levelArray[y-4][m]!= '/0'){
 			(vector->x)=(~(vector->x)+1);
-			tileUpdate(levelArray,y-4,k-3);
+			tileUpdate(levelArray,y-4,m);
 		}
 	}
 }
