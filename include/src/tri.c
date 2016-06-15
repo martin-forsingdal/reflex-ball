@@ -9,14 +9,6 @@ struct TVector {
 	long b;
 };
 
-//Initialiserer en vektor
-void initVector(struct TVector *v, long startX, long startY, long startA, long startB) {
-	(v->x) = (startX << 6);
-	(v->y) = (startY << 6);
-	(v->a) = (startA << 14);
-	(v->b) = (startB << 14);
-}
-
 //Printer en vektor på formatet "V=(x,y)
 void printV(struct TVector *v) {
 	printf("V=(");
@@ -45,4 +37,11 @@ void rotate(struct TVector *v, int theta) {
 	v->y = (temp*(sin(theta)>>14))+(v->y*(cos(theta)>>14));
 }
 
+//Initialiserer en vektor
+void initVector(struct TVector *v, int theta, long startA, long startB) {
+	(v->x) = cos(theta);
+	(v->y) = sin(theta);
+	(v->a) = (startA << 14);
+	(v->b) = (startB << 14);
+}
 

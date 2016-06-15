@@ -7,7 +7,7 @@
 //initialiserer en vektor for bolden, med retning og hastighed.
 
 void startBall(struct TVector *vector){
-	initVector(vector,0xea,0x68,61,37);
+	initVector(vector,171,33,39);
 }
 
 /*flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et
@@ -15,8 +15,6 @@ mellemrum på boldens tidligere position.*/
 
 void moveBall(struct TVector *vector){
   	int x,y;
-	gotoxy(vector->a+0x2000>>14,vector->b+0x2000>>14);
-	printf("%c",' ');
 	vector->a=vector->a+vector->x;
   	vector->b=vector->b+vector->y;
 	x=(int) ((vector->a+0x2000)>>14);
@@ -24,16 +22,22 @@ void moveBall(struct TVector *vector){
 	gotoxy(x,y);
 	printf("%c", 'o');
   	}
+
+void removeBall(struct TVector *vector) {
+	gotoxy(vector->a+0x2000>>14,vector->b+0x2000>>14);
+	printf("%c",' ');
+}
   
 /*reflekterer bolden når den rammer murene. Hvis y koordinaten er større end 2 har den ramt en af siderne, ellers har den ramt toppen. 
 Derefter inverteres enten x- eller y-koordinaten.*/
 
 void reflectBallWall(struct TVector *vector){
- 	if((vector->b)>(2<<14)){
+ 	if((vector->a)<(2<<14) || (vector->a)>(119<<14)){
     	(vector->x)=(~(vector->x)+1);
   	}
-  	else
+  	if((vector->b)<(2<<14)) {
     	(vector->y)=(~(vector->y)+1);
+	}
 }
 
 void updateStriker(char c, long *striker) {

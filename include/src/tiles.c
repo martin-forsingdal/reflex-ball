@@ -43,7 +43,7 @@ void levelTwo(unsigned char tilesTwo[11][24]) {
 	}
 	
 	for(j=0;j<24;j++){
-		if(j!=11 || j!=12){
+		if(j!=11 && j!=12){
 			tilesTwo[10][j]=219;
 		}
 	}
@@ -150,16 +150,16 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
 		}
-		else if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219){
+		if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
 		}
-		else if(levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219){
+		if(levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,l);
 		}
 
-		else if(levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219){
+		if(levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,m);
 		}
