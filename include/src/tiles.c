@@ -116,7 +116,7 @@ void tileUpdate(unsigned char levelArray[11][24], int i, int j){
 			printf("%c%c%c%c%c", 176,176,176,176,176);
 			break;
 		case 176:
-			levelArray[i][j]='/0';
+			levelArray[i][j]='\0';
 			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", ' ',' ',' ',' ',' ');
 			break;
@@ -134,32 +134,32 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	l=(x-1)/5;
 	m=(x-3)/5;
 	if(y==15){
-		if(levelArray[y - 5][k]!= '/0') {
+		if(levelArray[y - 5][k]!= '\0') {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
 		}
 	}
 	else if(y==3){
-			if(levelArray[y-3][k]!='/0'){
+			if(levelArray[y-3][k]!='\0'){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
 		}
 	}
 	else{
-		if(levelArray[y - 5][k]!= '/0') {
+		if(levelArray[y - 5][k]!= '\0') {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
 		}
-		else if(levelArray[y-3][k]!='/0'){
+		else if(levelArray[y-3][k]!='\0'){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
 		}
-		else if(levelArray[y-4][l]!= '/0'){
+		else if(levelArray[y-4][l]!= '\0'){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,l);
 		}
 
-		else if(levelArray[y-4][m]!= '/0'){
+		else if(levelArray[y-4][m]!= '\0'){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,m);
 		}
