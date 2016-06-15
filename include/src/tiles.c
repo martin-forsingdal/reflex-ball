@@ -134,32 +134,32 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	l=(x-1)/5;
 	m=(x-3)/5;
 	if(y==15){
-		if(levelArray[y - 5][k]!= '\0') {
+		if(levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
 		}
 	}
 	else if(y==3){
-			if(levelArray[y-3][k]!='\0'){
+			if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219 ){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
 		}
 	}
 	else{
-		if(levelArray[y - 5][k]!= '\0') {
+		if(levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219)  {
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-5,k);
 		}
-		else if(levelArray[y-3][k]!='\0'){
+		else if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219){
 			(vector->y)=(~(vector->y)+1);
 			tileUpdate(levelArray,y-3,k);
 		}
-		else if(levelArray[y-4][l]!= '\0'){
+		else if(levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,l);
 		}
 
-		else if(levelArray[y-4][m]!= '\0'){
+		else if(levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219){
 			(vector->x)=(~(vector->x)+1);
 			tileUpdate(levelArray,y-4,m);
 		}
