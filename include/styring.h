@@ -14,6 +14,6 @@ void startBall(struct TVector *vector);
 void moveBall(struct TVector *vector);
 void updateStriker(char readKey, long *striker);
 void initStriker(long striker);
-void reflectStriker(struct TVector *vector);
+void reflectStriker(struct TVector *vector, long striker);
 
 #endif	// styring_h

@@ -62,6 +62,8 @@ void initStriker(long striker) {
 	}
 }
 
-void reflectStriker(struct TVector *vector) {
-	(vector->y)=(~(vector->y)+1);
+void reflectStriker(struct TVector *vector, long striker) {
+	//if(vector->a==striker+3 || vector->a==striker+4) {
+		(vector->y)=(~(vector->y)+1);
+	//}
 }
