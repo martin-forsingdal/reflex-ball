@@ -1,0 +1,14 @@
+diff a/include/src/tri.c b/include/src/tri.c	(rejected hunks)
+@@ -3,11 +3,11 @@
+ 
+ //Struktur til vektorer
+ struct TVector {
++	unsigned int angle;
+ 	long x;
+ 	long y;
+ 	long a;
+ 	long b;
+-	unsigned int angle;
+ };
+ 
+ //Printer en vektor på formatet "V=(x,y)
