@@ -67,6 +67,7 @@ void LEDupdate(char videoBuffer[5][6], char *flag) {
 		}
 }
 
+
 void LEDmoveString(char *string, char n, char m, char videoBuffer[5][6]) {
 	char i,j;
 	if(n==6) {
@@ -82,3 +83,4 @@ void LEDmoveString(char *string, char n, char m, char videoBuffer[5][6]) {
    	}
 }
 
+//void LEDupdateString
