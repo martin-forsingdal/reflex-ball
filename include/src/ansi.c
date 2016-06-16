@@ -115,7 +115,7 @@ void window(int x1, int y1, int x2, int y2) {
 }
 
 
-void menu() {
+void title() {
 	bgcolor(7);
 	fgcolor(1);
 	gotoxy(12,5);
