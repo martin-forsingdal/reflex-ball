@@ -56,13 +56,22 @@ void levelThree(unsigned char tilesThree[11][24]){
 	char i=0x00;
 	char j=0x00;
 	initTileArray(tilesThree);
-	for(i=0;i<11;i++){
+	for(i=0;i<10;i++){
 		for(j=0;j<24;j++){
 			if(j!=11 && j!=12){
 				tilesThree[i][j]=178;
 			}
 		}
 	}
+	for(j=0;j<24;j++){
+		if(j!=11 && j!=12){
+			tilesThree[10][j]=219;
+		}
+	}
+	tilesThree[0][11]=177;
+	tilesThree[0][12]=177;
+	tilesThree[1][11]=219;
+	tilesThree[1][12]=219;
 }
 
 void printLevel(unsigned char levelArray[11][24]){
