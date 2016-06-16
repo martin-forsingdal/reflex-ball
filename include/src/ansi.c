@@ -113,3 +113,71 @@ void window(int x1, int y1, int x2, int y2) {
 		printf("%c",array[3]);
 	}
 }
+
+
+void menu() {
+	bgcolor(7);
+	fgcolor(1);
+	gotoxy(2,2);
+	printf(" ______  \n");
+	printf("/\__  _\ \n");
+	printf("\/_/\ \/ \n");
+	printf("   \ \_\ \n");
+	printf("    \/_/ \n");
+	gotoxy(2,11);
+	fgcolor(2);
+	printf(" __    \n");
+	printf("/\ \   \n");
+	printf("\ \ \  \n");
+	printf(" \ \_\ \n");
+	printf("  \/_/ \n");
+	gotoxy(2,18);
+	fgcolor(4);
+	printf(" __        \n");
+	printf("/\ \       \n");
+	printf("\ \ \____  \n");
+	printf(" \ \_____\ \n");
+	printf("  \/_____/ \n");
+	gotoxy(2,29);
+	fgcolor(5);
+	printf(" ______   \n");
+	printf("/\  ___\  \n");
+	printf("\ \  __\  \n");
+	printf(" \ \_____\\n");
+	printf("  \/_____/\n");
+	gotoxy(2,43);
+	fgcolor(8);
+	printf(" ______   \n");
+	printf("/\  ___\  \n");
+	printf("\ \ \____ \n");
+	printf(" \ \_____\\n");
+	printf("  \/_____/\n");
+	fgcolor(1);
+	gotoxy(2,54);
+	printf(" ______   \n");
+	printf("/\  == \  \n");
+	printf("\ \  __<  \n");
+	printf(" \ \_\ \_\\n");
+	printf("  \/_/ /_/\n");
+	gotoxy(2,65);
+	fgcolor(2);
+	printf(" ______   \n");
+	printf("/\  __ \  \n");
+	printf("\ \  __ \ \n");
+	printf(" \ \_\ \_\\n");
+	printf("  \/_/\/_/\n");
+	gotoxy(2,76);
+	fgcolor(4);
+	printf(" ______   \n");
+	printf("/\  ___\  \n");
+	printf("\ \___  \ \n");
+	printf(" \/\_____\\n");
+	printf("  \/_____/\n");
+	gotoxy(2,87);
+	fgcolor(5);
+	printf(" __  __   \n");
+	printf("/\ \_\ \  \n");
+	printf("\ \  __ \ \n");
+	printf(" \ \_\ \_\\n");
+	printf("  \/_/\/_/\n");	
+}
