@@ -95,6 +95,7 @@ void reflectStriker(struct TVector *vector, long striker) {
 	vector->y=sin(vector->angle+256);
 	vector->x=cos(vector->angle);
 	gotoxy(2,2);
+
 	printf("%d",vector->angle);
 
 }

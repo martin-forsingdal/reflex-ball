@@ -10,7 +10,7 @@ struct TVector {
 	unsigned int angle;
 };
 
-//long sin(int theta);
+long sin(int theta);
 long cos(int theta);
 void initVector(struct TVector *v, int theta, long startA, long startB);
 void printV(struct TVector *v);
