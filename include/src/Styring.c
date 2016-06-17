@@ -4,6 +4,40 @@
 #include "board.h"
 #include "fixpoint.h"
 
+
+void levelControl(char readKey, char *level) {
+	switch(readKey) {
+		case 0x01 :
+			gotoxy(57,15+(5*(*level)));
+			printf("Level %d",*level);
+			if((*level)==3) {
+				*level=1;
+			} else {
+				(*level)++;
+			}
+			reverse('1');
+			gotoxy(57,15+(5*(*level)));
+			printf("Level %d",*level);
+			reverse('0');
+			break;
+		case 0x02 :
+			gotoxy(57,15+(5*(*level)));
+			printf("Level %d",*level);
+			if((*level)==1) {
+				*level=3;
+			} else {
+				(*level)--;
+			}
+			reverse('1');
+			gotoxy(57,15+(5*(*level)));
+			printf("Level %d",*level);
+			reverse('0');
+			break;
+		default :
+			break;
+	}
+}
+
 //initialiserer en vektor for bolden, med retning og hastighed.
 
 void startBall(struct TVector *vector){
