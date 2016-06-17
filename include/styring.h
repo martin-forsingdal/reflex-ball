@@ -2,7 +2,6 @@
 #include "tri.h"
 #include "LUT.h"
 #include "board.h"
-#include "charset.h"
 #include "fixpoint.h"
 
 #ifndef styring_h
