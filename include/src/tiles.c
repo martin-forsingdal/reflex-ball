@@ -1,7 +1,7 @@
 #include "ansi.h"
 #include "tri.h"
 
-void initTileArray(unsigned char tilesNumber[11][24]) {
+void initTileArray(unsigned char tilesNumber[11][24]) //hej {
 	char i,j;
 	for(i = 0x00; i < 11; i++) {
 		for(j = 0x00; j < 24; j++) {
