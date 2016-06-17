@@ -17,5 +17,6 @@ void blink(char on);
 void reverse(char on);
 void window(int x1, int y1, int x2, int y2);
 void title();
+void gameOver();
 
 #endif // _ANSI_H_

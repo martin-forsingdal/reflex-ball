@@ -133,8 +133,8 @@ void reflectStriker(struct TVector *vector, long striker) {
 			vector->angle-=(((vector->angle)>>4)*(afstand-8));
 		}
 	}
-	vector->y=sin(vector->angle+256);
-	vector->x=cos(vector->angle);
+	vector->y=sin(vector->angle+256)/2;
+	vector->x=cos(vector->angle)/2;
 	gotoxy(2,2);
 
 	printf("%d",vector->angle);
