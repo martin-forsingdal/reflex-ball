@@ -74,6 +74,21 @@ void levelThree(unsigned char tilesThree[11][24]){
 	tilesThree[1][12]=219;
 }
 
+void levelChoose(unsigned char levelArray[11][24], char level) {
+	switch(level) {
+		case 1:
+			levelOne(levelArray);
+			break;
+	   	case 2:
+			levelTwo(levelArray);
+			break;
+	   	case 3:
+			levelThree(levelArray);
+			break;
+	}
+}
+
+
 void printLevel(unsigned char levelArray[11][24]){
 	int color[4] = {1,2,4,5};
 	char i=0x00;

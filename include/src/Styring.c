@@ -54,6 +54,7 @@ void moveBall(struct TVector *vector){
 	x=(int) ((vector->a+0x2000)>>14);
 	y=(int) ((vector->b+0x2000)>>14);
 	gotoxy(x,y);
+	fgcolor(0);
 	if(y!=40)
 	printf("%c", 'o');
   	}
@@ -79,6 +80,7 @@ void reflectBallWall(struct TVector *vector){
 }
 
 void updateStriker(char c, long *striker) {
+	fgcolor(3);
 	if(c==0x01 && *striker < 104) {
 		gotoxy(*striker,40);
 		printf("%c",' ');
@@ -97,6 +99,7 @@ void updateStriker(char c, long *striker) {
 void initStriker(long striker) {
 	char i;
 	gotoxy(striker,40);
+	fgcolor(3);
 	for(i=0;i<18;i++) {
 		printf("%c",223);
 	}
