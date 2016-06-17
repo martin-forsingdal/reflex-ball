@@ -215,5 +215,14 @@ void title() {
 	gotoxy(97,8);
 	printf(" \ \_\ \_\ \n");
 	gotoxy(97,9);
-	printf("  \/_/\/_/ \n");	
+	printf("  \/_/\/_/ \n");
+	fgcolor(8);
+	reverse('1');
+	gotoxy(57,20);
+	printf("Level 1");
+	reverse('0');
+	gotoxy(57,25);
+	printf("Level 2");
+	gotoxy(57,30);
+	printf("Level 3");
 }

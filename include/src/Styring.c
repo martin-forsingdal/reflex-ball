@@ -6,6 +6,7 @@
 
 
 void levelControl(char readKey, char *level) {
+	fgcolor(8);
 	switch(readKey) {
 		case 0x01 :
 			gotoxy(57,15+(5*(*level)));
@@ -55,13 +56,16 @@ void moveBall(struct TVector *vector){
 	y=(int) ((vector->b+0x2000)>>14);
 	gotoxy(x,y);
 	fgcolor(0);
-	if(y!=40)
+	//if(y<=39 && y>=1 && x>=2 && x<=121);
 	printf("%c", 'o');
   	}
 
 void removeBall(struct TVector *vector) {
-	gotoxy(vector->a+0x2000>>14,vector->b+0x2000>>14);
-	if(vector->b+0x2000>>14!=40)
+	int x,y;
+	x=(int) ((vector->a+0x2000)>>14);
+	y=(int) ((vector->b+0x2000)>>14);
+	gotoxy(x,y);
+	//if(y<=39 && y>=1 && x>=2 && x<=121);
 	printf("%c",' ');
 }
   
