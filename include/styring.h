@@ -8,7 +8,7 @@
 #ifndef styring_h
 #define styring_h
 
-
+void levelControl(char readKey, char *level);
 void reflectBallWall(struct TVector *vector);
 void startBall(struct TVector *vector);
 void moveBall(struct TVector *vector);

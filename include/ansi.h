@@ -16,6 +16,6 @@ void underline(char on);
 void blink(char on);
 void reverse(char on);
 void window(int x1, int y1, int x2, int y2);
-void menu();
+void title();
 
 #endif // _ANSI_H_
