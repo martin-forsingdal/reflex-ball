@@ -1,11 +1,7 @@
 #include "ansi.h"
 #include "tri.h"
 
-<<<<<<< HEAD
-void initTileArray(unsigned char tilesNumber[11][24]){
-=======
 void initTileArray(unsigned char tilesNumber[11][24]) {
->>>>>>> 3d71b8d60a6762a3b5869b7c294be67bca531dcd
 	char i,j;
 	for(i = 0x00; i < 11; i++) {
 		for(j = 0x00; j < 24; j++) {
@@ -77,6 +73,21 @@ void levelThree(unsigned char tilesThree[11][24]){
 	tilesThree[1][11]=219;
 	tilesThree[1][12]=219;
 }
+
+void levelChoose(unsigned char levelArray[11][24], char level) {
+	switch(level) {
+		case 1:
+			levelOne(levelArray);
+			break;
+	   	case 2:
+			levelTwo(levelArray);
+			break;
+	   	case 3:
+			levelThree(levelArray);
+			break;
+	}
+}
+
 
 void printLevel(unsigned char levelArray[11][24]){
 	int color[4] = {1,2,4,5};
