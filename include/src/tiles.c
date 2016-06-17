@@ -1,7 +1,11 @@
 #include "ansi.h"
 #include "tri.h"
 
+<<<<<<< HEAD
+void initTileArray(unsigned char tilesNumber[11][24]){
+=======
 void initTileArray(unsigned char tilesNumber[11][24]) {
+>>>>>>> 3d71b8d60a6762a3b5869b7c294be67bca531dcd
 	char i,j;
 	for(i = 0x00; i < 11; i++) {
 		for(j = 0x00; j < 24; j++) {
@@ -58,13 +62,13 @@ void levelThree(unsigned char tilesThree[11][24]){
 	initTileArray(tilesThree);
 	for(i=0;i<10;i++){
 		for(j=0;j<24;j++){
-			if(j!=11 && j!=12){
+			if(j!=11 && j!=12 && j!=13 && j!=14){
 				tilesThree[i][j]=178;
 			}
 		}
 	}
 	for(j=0;j<24;j++){
-		if(j!=11 && j!=12){
+		if(j!=11 && j!=12 && j!=13 && j!=14){
 			tilesThree[10][j]=219;
 		}
 	}
@@ -116,12 +120,14 @@ void tileUpdate(unsigned char levelArray[11][24], int i, int j){
 	switch(levelArray[i][j]){
 		case 178:
 			levelArray[i][j]--;
+			fgcolor(6);
 			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", 177,177,177,177,177);
 			break;
 		case 177:
 			levelArray[i][j]--;
 			gotoxy(j*5+2,i+4);
+			fgcolor(10);
 			printf("%c%c%c%c%c", 176,176,176,176,176);
 			break;
 		case 176:
@@ -144,34 +150,45 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	m=(x-3)/5;
 	if(y==15){
 		if(levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) {
-			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-5,k);
+			if(((vector->y+0x2000)>>14)>=1){
+				(vector->y)=(~(vector->y)+1);
+				tileUpdate(levelArray,y-5,k);
+			}
 		}
 	}
 	else if(y==3){
 			if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219 ){
-			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-3,k);
-		}
+				if(((vector->y-0x02000)>>14)<=(-1)){
+					(vector->y)=(~(vector->y)+1);
+					tileUpdate(levelArray,y-3,k);
+				}
+		    }
 	}
 	else{
 		if(levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219)  {
-			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-5,k);
+			if(((vector->y+0x2000)>>14)>=1){
+				(vector->y)=(~(vector->y)+1);
+				tileUpdate(levelArray,y-5,k);
+			}
 		}
 		if(levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219){
-			(vector->y)=(~(vector->y)+1);
-			tileUpdate(levelArray,y-3,k);
+			if(((vector->y-0x02000)>>14)<=(-1)){
+					(vector->y)=(~(vector->y)+1);
+					tileUpdate(levelArray,y-3,k);
+				}
 		}
 		if(levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219){
-			(vector->x)=(~(vector->x)+1);
-			tileUpdate(levelArray,y-4,l);
+			if(((vector->x+0x2000)>>14)>=1){
+				(vector->x)=(~(vector->x)+1);
+				tileUpdate(levelArray,y-4,l);
+			}
 		}
 
 		if(levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219){
-			(vector->x)=(~(vector->x)+1);
-			tileUpdate(levelArray,y-4,m);
-			
+			if(((vector->x-0x2000)>>14)<=(-1)){
+				(vector->x)=(~(vector->x)+1);
+				tileUpdate(levelArray,y-4,m);
+			}
 		}
 	}
 }
