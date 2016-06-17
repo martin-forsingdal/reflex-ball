@@ -1,7 +1,11 @@
 #include "ansi.h"
 #include "tri.h"
 
+<<<<<<< HEAD
 void initTileArray(unsigned char tilesNumber[11][24]){
+=======
+void initTileArray(unsigned char tilesNumber[11][24]) {
+>>>>>>> 3d71b8d60a6762a3b5869b7c294be67bca531dcd
 	char i,j;
 	for(i = 0x00; i < 11; i++) {
 		for(j = 0x00; j < 24; j++) {
