@@ -117,11 +117,11 @@ void printLevel(unsigned char levelArray[11][24]){
 						printf("%c%c%c%c%c", 178, 178, 178, 178, 178);
 						break;
 					case 177:
-						fgcolor(11);
+						fgcolor(3);
 						printf("%c%c%c%c%c", 177, 177, 177, 177, 177);
 						break;
 					case 176:
-						fgcolor(1);
+						fgcolor(9);
 						printf("%c%c%c%c%c", 176, 176, 176, 176, 176);
 						break;
 				}
@@ -135,7 +135,7 @@ void tileUpdate(unsigned char levelArray[11][24], int i, int j, int *points){
 		case 178:
 			(*points)++;
 			levelArray[i][j]--;
-			fgcolor(6);
+			fgcolor(3);
 			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", 177,177,177,177,177);
 			break;
