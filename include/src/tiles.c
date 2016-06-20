@@ -113,12 +113,15 @@ void printLevel(unsigned char levelArray[11][24]){
 						printf("%c%c%c%c%c", 219, 219, 219, 219, 219);
 						break;
 					case 178:
+						fgcolor(2);
 						printf("%c%c%c%c%c", 178, 178, 178, 178, 178);
 						break;
 					case 177:
+						fgcolor(11);
 						printf("%c%c%c%c%c", 177, 177, 177, 177, 177);
 						break;
 					case 176:
+						fgcolor(1);
 						printf("%c%c%c%c%c", 176, 176, 176, 176, 176);
 						break;
 				}
