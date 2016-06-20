@@ -22,7 +22,7 @@ void levelOne(unsigned char tilesOne[11][24]){
 			else{
 				tilesOne[i][j]=178-k;
 				k++;
-				if(k=3){
+				if(k==3){
 				k=0;
 				}
 			}
@@ -127,21 +127,24 @@ void printLevel(unsigned char levelArray[11][24]){
 	}
 }
 
-void tileUpdate(unsigned char levelArray[11][24], int i, int j){
+void tileUpdate(unsigned char levelArray[11][24], int i, int j, int *points){
 	switch(levelArray[i][j]){
 		case 178:
+			(*points)++;
 			levelArray[i][j]--;
 			fgcolor(6);
 			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", 177,177,177,177,177);
 			break;
 		case 177:
+			*points+=2;
 			levelArray[i][j]--;
 			gotoxy(j*5+2,i+4);
-			fgcolor(10);
+			fgcolor(9);
 			printf("%c%c%c%c%c", 176,176,176,176,176);
 			break;
 		case 176:
+			*points+=5;
 			levelArray[i][j]='\0';
 			gotoxy(j*5+2,i+4);
 			printf("%c%c%c%c%c", ' ',' ',' ',' ',' ');
@@ -151,7 +154,7 @@ void tileUpdate(unsigned char levelArray[11][24], int i, int j){
 	}
 }
 
-void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
+void tileCheck(unsigned char levelArray[11][24], struct TVector *vector, int *points) {
 	unsigned char x,y;
 	int k, l, m;
 	x = (vector->a + 0x2000) >> 14;
@@ -162,32 +165,32 @@ void tileCheck(unsigned char levelArray[11][24], struct TVector *vector) {
 	if(y==15){
 		if((levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) && (vector->y<0)) {
 				(vector->y)=(~(vector->y)+1);
-				tileUpdate(levelArray,y-5,k);
+				tileUpdate(levelArray,y-5,k, points);
 		}
 	}
 	else if(y==3){
 			if((levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219) && (vector->y>0)){
-					(vector->y)=(~(vector->y)+1);
-					tileUpdate(levelArray,y-3,k);
+				(vector->y)=(~(vector->y)+1);
+				tileUpdate(levelArray,y-3,k, points);
 		    }
 	}
 	else{
 		if((levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) && (vector->y<0))  {
 				(vector->y)=(~(vector->y)+1);
-				tileUpdate(levelArray,y-5,k);
+				tileUpdate(levelArray,y-5,k, points);
 		}
 		if((levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219) && (vector->y>0)){
-					(vector->y)=(~(vector->y)+1);
-					tileUpdate(levelArray,y-3,k);  
+				(vector->y)=(~(vector->y)+1);
+				tileUpdate(levelArray,y-3,k, points);  
 		}
 		if((levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219) && (vector->x>0)){
 				(vector->x)=(~(vector->x)+1);
-				tileUpdate(levelArray,y-4,l);
+				tileUpdate(levelArray,y-4,l, points);
 		}
 
 		if((levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219) && (vector->x<0)){
 				(vector->x)=(~(vector->x)+1);
-				tileUpdate(levelArray,y-4,m);
+				tileUpdate(levelArray,y-4,m, points);
 		}
 	}
 }

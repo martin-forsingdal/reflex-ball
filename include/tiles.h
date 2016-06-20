@@ -7,8 +7,8 @@ void levelTwo(unsigned char tilesTwo[11][24]);
 void levelThree(unsigned char tilesThree[11][24]);
 void levelChoose(unsigned char levelArray[11][24], char level);
 void printLevel(unsigned char levelArray[11][24]);
-void tileCheck(unsigned char levelArray[11][24], struct TVector *vector);
-void tileUpdate(unsigned char levelArray[11][24], int y, int x);
+void tileCheck(unsigned char levelArray[11][24], struct TVector *vector, int *points);
+void tileUpdate(unsigned char levelArray[11][24], int y, int x, int *points);
 
 
 #endif	// tiles_h
