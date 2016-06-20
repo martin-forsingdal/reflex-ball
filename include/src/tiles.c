@@ -68,10 +68,10 @@ void levelThree(unsigned char tilesThree[11][24]){
 			tilesThree[10][j]=219;
 		}
 	}
-	tilesThree[0][11]=177;
 	tilesThree[0][12]=177;
-	tilesThree[1][11]=219;
+	tilesThree[0][13]=177;
 	tilesThree[1][12]=219;
+	tilesThree[1][13]=219;
 }
 
 void levelChoose(unsigned char levelArray[11][24], char level) {
