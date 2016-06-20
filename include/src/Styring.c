@@ -4,7 +4,6 @@
 #include "board.h"
 #include "fixpoint.h"
 
-
 void levelControl(char readKey, char *level) {
 	fgcolor(8);
 	switch(readKey) {
@@ -60,13 +59,17 @@ void moveBall(struct TVector *vector){
 	printf("%c", 'o');
   	}
 
-void removeBall(struct TVector *vector) {
-	int x,y;
+void removeBall(struct TVector *vector, unsigned char tileArray[11][24]) {
+	int x,y, k;
 	x=(int) ((vector->a+0x2000)>>14);
 	y=(int) ((vector->b+0x2000)>>14);
+	k=(x-2)/5;
 	gotoxy(x,y);
-	//if(y<=39 && y>=1 && x>=2 && x<=121);
-	printf("%c",' ');
+	if(y<=39 && y>=2 && x>=2 && x<=121){
+		if(tileArray[y-4][k]!=176 && tileArray[y-4][k]!=177 && tileArray[y-4][k]!=178 && tileArray[y-4][k]!=219){
+			printf("%c",' ');
+		}
+	}
 }
   
 /*reflekterer bolden når den rammer murene. Hvis y koordinaten er større end 2 har den ramt en af siderne, ellers har den ramt toppen. 

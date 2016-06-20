@@ -11,7 +11,7 @@ void levelControl(char readKey, char *level);
 void reflectBallWall(struct TVector *vector);
 void startBall(struct TVector *vector);
 void moveBall(struct TVector *vector);
-void removeBall(struct TVector *vector);
+void removeBall(struct TVector *vector, unsigned char tileArray[11][24]);
 void updateStriker(char readKey, long *striker);
 void initStriker(long striker);
 void reflectStriker(struct TVector *vector, long striker);
