@@ -66,9 +66,13 @@ void removeBall(struct TVector *vector, unsigned char tileArray[11][24]) {
 	k=(x-2)/5;
 	gotoxy(x,y);
 	if(y<=39 && y>=2 && x>=2 && x<=121){
-		if(tileArray[y-4][k]!=176 && tileArray[y-4][k]!=177 && tileArray[y-4][k]!=178 && tileArray[y-4][k]!=219){
-			printf("%c",' ');
+		if(y>=4 && y<=14){
+			if(tileArray[y-4][k]!=176 && tileArray[y-4][k]!=177 && tileArray[y-4][k]!=178 && tileArray[y-4][k]!=219){
+				printf("%c",' ');
+			}
 		}
+		else
+			printf("%c",' ');
 	}
 }
   
