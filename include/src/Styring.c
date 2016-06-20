@@ -133,6 +133,6 @@ void reflectStriker(struct TVector *vector, long striker) {
 			vector->angle-=(((vector->angle)>>4)*(afstand-8));
 		}
 	}
-	vector->y=sin(vector->angle+256)/2;
-	vector->x=cos(vector->angle)/2;
+	vector->y=sin(vector->angle+256)>>1;
+	vector->x=cos(vector->angle)>>1;
 }
