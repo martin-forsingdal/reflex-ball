@@ -80,6 +80,17 @@ void LEDmoveString(char *string, char n, char m, char videoBuffer[5][6]) {
    	}
 }
 
-void LEDupdateString(char *string, char life) {
+void LEDupdateLife(char *string, char life) {
 	string[4] = life;
+}
+
+void LEDupdateLevel(char *string, char level) {
+	string[12] = level;
+}
+
+void LEDupdatePoints(char *string, int points) {
+	string[21]=points/1000 + 0x30;
+	string[22]=(points%1000)/100 + 0x30;
+	string[23]=(points%100)/10 + 0x30;
+	string[24]=points%10 + 0x30;
 }

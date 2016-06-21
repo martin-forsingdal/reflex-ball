@@ -101,9 +101,10 @@ void updateStriker(char c, long *striker) {
 
 void initStriker(long *striker) {
 	char i;
+	gotoxy(1,40);
+	clreol();
 	*striker=32;
 	gotoxy(*striker,40);
-	clreol();
 	fgcolor(3);
 	for(i=0;i<18;i++) {
 		printf("%c",223);
