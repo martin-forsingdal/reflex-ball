@@ -64,7 +64,7 @@ void removeBall(struct TVector *vector) {
 	x=(int) ((vector->a+0x2000)>>14);
 	y=(int) ((vector->b+0x2000)>>14);
 	gotoxy(x,y);
-	//if(y<=39 && y>=1 && x>=2 && x<=121);
+	if(y<=39 && y>=2 && x>=2 && x<=121);
 	printf("%c",' ');
 }
   
