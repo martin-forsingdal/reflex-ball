@@ -113,7 +113,6 @@ void initStriker(long *striker) {
 
 void reflectStriker(struct TVector *vector, long striker) {
 	long afstand=((vector->a+0x2000)>>14)-striker;
-	gotoxy(((vector->a+0x2000)>>14),41);
 	if(vector->x<0) {
 		if(vector->angle<128) {
 			vector->angle=256-vector->angle;
