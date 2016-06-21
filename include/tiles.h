@@ -9,6 +9,7 @@ void levelChoose(unsigned char levelArray[11][24], char level);
 void printLevel(unsigned char levelArray[11][24]);
 void tileCheck(unsigned char levelArray[11][24], struct TVector *vector, int *points);
 void tileUpdate(unsigned char levelArray[11][24], int y, int x, int *points);
+void printTileArray(unsigned char levelArray[11][24]);
 
 
 #endif	// tiles_h

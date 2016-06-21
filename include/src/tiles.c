@@ -1,4 +1,4 @@
-#include "ansi.h"
+#include "ascii.h"
 #include "tri.h"
 
 void initTileArray(unsigned char tilesNumber[11][24]){
@@ -203,7 +203,11 @@ void printTileArray(unsigned char levelArray[11][24]) {
 	for(i=0;i<24;i++) {
 		for(j=0;j<11;j++) {
 			gotoxy(20+i,20+j);
-			printf("%c",levelArray[j][i]);
+			if(levelArray[j][i]=='\0') {
+				printf(" ");
+			} else {
+				printf("%c",levelArray[j][i]);
+			}
 		}
 	}	
 }

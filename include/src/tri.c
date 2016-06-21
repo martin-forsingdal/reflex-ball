@@ -1,5 +1,4 @@
 #include "LUT.h"
-#include "fixpoint.h"
 
 //Struktur til vektorer
 struct TVector {
@@ -9,15 +8,6 @@ struct TVector {
 	long b;
 	unsigned int angle;
 };
-
-//Printer en vektor på formatet "V=(x,y)
-void printV(struct TVector *v) {
-	printf("V=(");
-	printFix(expand(v->x));
-	printf(",");
-	printFix(expand(v->y));
-	printf(")");
-}
 
 //returns a sin value for theta
 long sin(int theta) {

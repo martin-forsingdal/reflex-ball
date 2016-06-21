@@ -1,8 +1,8 @@
 #include <eZ8.h>
 #include <sio.h>
 
-#ifndef _ANSI_H_
-#define _ANSI_H_
+#ifndef _ASCII_H_
+#define _ASCII_H_
 
 #define ESC 0x1B
 void fgcolor(int foreground);
@@ -20,4 +20,4 @@ void title();
 void gameOver();
 void victory();
 
-#endif // _ANSI_H_
+#endif // _ASCII_H_

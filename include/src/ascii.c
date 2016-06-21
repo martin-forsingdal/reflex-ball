@@ -228,9 +228,12 @@ void title() {
 	gotoxy(85,20);
 	printf("%c%c%c%c%c = Unbreakable",219,219,219,219,219);
 	gotoxy(85,23);
+	fgcolor(2);
 	printf("%c%c%c%c%c = 3 Health",178,178,178,178,178);
 	gotoxy(85,26);
+	fgcolor(3);
 	printf("%c%c%c%c%c = 2 Health",177,177,177,177,177);
+	fgcolor(9);
 	gotoxy(85,29);
 	printf("%c%c%c%c%c = 1 Health",176,176,176,176,176);
 }

@@ -1,6 +1,6 @@
 #include <eZ8.h>
 #include <sio.h>
-#include "ansi.h"
+#include "ascii.h"
 
 void initButton() {
 	//Der vælges at PF7 og PF6 er input

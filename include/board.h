@@ -1,5 +1,6 @@
 #include <eZ8.h>
 #include <sio.h>
+#include "ascii.h"
 
 #ifndef board_h
 #define board_h
