@@ -18,5 +18,6 @@ void reverse(char on);
 void window(int x1, int y1, int x2, int y2);
 void title();
 void gameOver();
+void victory();
 
 #endif // _ANSI_H_
