@@ -121,7 +121,7 @@ void initStriker(long *striker) {
 /* Funktionen bliver kun kaldt nŒr bolden befinder sig pŒ linjen over strikeren.
 Den vurderer derefter indfaldsvinklen i forhold til den sidste udfaldsvinkel
 fra strikeren og reflekterer i forskellige zoner bolden pŒ strikeren.*/
-void reflectStriker(struct TVector *vector, long striker) {
+void reflectStriker(struct TVector *vector, long striker, char level) {
 	long afstand=((vector->a+0x2000)>>14)-striker;
 	if(vector->x<0) {
 		if(vector->angle<128) {
@@ -144,6 +144,6 @@ void reflectStriker(struct TVector *vector, long striker) {
 			vector->angle-=(((vector->angle)>>4)*(afstand-8));
 		}
 	}
-	vector->y=sin(vector->angle+256)>>1;
-	vector->x=cos(vector->angle)>>1;
+	vector->y=(sin(vector->angle+256)>>1)/(4-level);
+	vector->x=(cos(vector->angle)>>1)/(4-level);
 }
