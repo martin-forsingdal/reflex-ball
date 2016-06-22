@@ -40,8 +40,8 @@ void levelControl(char readKey, char *level) {
 
 //initialiserer en vektor for bolden, med retning og hastighed.
 
-void startBall(struct TVector *vector){
-	initVector(vector,88,33,37);
+void startBall(struct TVector *vector, char level){
+	initVector(vector,88,33,39, level);
 }
 
 /*flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et

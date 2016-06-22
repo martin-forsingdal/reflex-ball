@@ -12,7 +12,7 @@ struct TVector {
 
 long sin(int theta);
 long cos(int theta);
-void initVector(struct TVector *v, int theta, long startA, long startB);
+void initVector(struct TVector *v, int theta, long startA, long startB, char level);
 void rotate(struct TVector *v,int theta);
 
 #endif //tri_h

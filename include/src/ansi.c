@@ -236,16 +236,59 @@ void title() {
 	fgcolor(9);
 	gotoxy(85,29);
 	printf("%c%c%c%c%c = 1 Health",176,176,176,176,176);
+	fgcolor(0);
+	gotoxy(9,33);
+	printf("Button 3");
+	gotoxy(19,33);
+	printf("Button 2");
+	gotoxy(29,33);
+	printf("Button 1");
 	fgcolor(1);
+	gotoxy(10,35);
+	printf("%c%c%c%c%c%c",220,219,219,219,219,220);
+	gotoxy(10,36);
+	printf("%c%c%c%c%c%c",219,219,219,219,219,219);
+	gotoxy(10,37);
+	printf("%c%c%c%c%c%c",223,219,219,219,219,223);
 	gotoxy(20,35);
 	printf("%c%c%c%c%c%c",220,219,219,219,219,220);
 	gotoxy(20,36);
 	printf("%c%c%c%c%c%c",219,219,219,219,219,219);
 	gotoxy(20,37);
 	printf("%c%c%c%c%c%c",223,219,219,219,219,223);
+	gotoxy(30,35);
+	printf("%c%c%c%c%c%c",220,219,219,219,219,220);
+	gotoxy(30,36);
+	printf("%c%c%c%c%c%c",219,219,219,219,219,219);
+	gotoxy(30,37);
+	printf("%c%c%c%c%c%c",223,219,219,219,219,223);
+	fgcolor(3);
+	gotoxy(14,25);
+	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223);
+	fgcolor(0);
+	gotoxy(9,20);
+	printf("Button 2");
+	gotoxy(12,21);
+	printf("%c",220);
+	gotoxy(10,22);
+	printf("%c%c%c%c%c%c%c",254,219,219,219,219,219,219);
+	gotoxy(12,23);
+	printf("%c",223);
+	gotoxy(29,20);
+	printf("Button 1");
+	gotoxy(33,21);
+	printf("%c",220);
+	gotoxy(29,22);
+	printf("%c%c%c%c%c%c%c",219,219,219,219,219,219,254);
+	gotoxy(33,23);
+	printf("%c",223);
+	gotoxy(85,35);
+	printf("%c Button 3 is used to",219);
+	gotoxy(85,36);
+	printf("%c select or proceed",254);
 }
 
-void gameOver() {
+void gameOver(char life) {
 	fgcolor(1);
 	gotoxy(16,17);
 	printf(" ______     ______     __    __     ______        ______     __   __   ______     ______   ");
@@ -259,7 +302,11 @@ void gameOver() {
 	printf("  \/_____/   \/_/\/_/   \/_/  \/_/   \/_____/      \/_____/   \/_/      \/_____/   \/_/ /_/");
 }
 
-void victory() {
+void victory(int points, unsigned char life, unsigned char level) {
+	int lifeScore;
+	life-=0x30;
+	level-=0x30;
+	lifeScore = (int) life*level*50;
 	fgcolor(2);
 	gotoxy(22,17);
 	printf(" __   __   __     ______     ______   ______     ______     __  __     __");
@@ -271,5 +318,7 @@ void victory() {
 	printf(" \ \__|    \ \_\  \ \_____\    \ \_\  \ \_____\  \ \_\ \_\  \/\_____\  \/\_\ ");
 	gotoxy(22,21);
 	printf("  \/_/      \/_/   \/_____/     \/_/   \/_____/   \/_/ /_/   \/_____/   \/_/ ");
+	gotoxy(44,24);
+	printf("Final score: %04d + %d x %d = %d",points,life,level*50,points+lifeScore);
 }
 

@@ -18,6 +18,6 @@ void reverse(char on);
 void window(int x1, int y1, int x2, int y2);
 void title();
 void gameOver();
-void victory();
+void victory(int points, char life, char level);
 
 #endif // _ASCII_H_
