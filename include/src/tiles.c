@@ -33,16 +33,19 @@ void levelOne(unsigned char tilesOne[11][15]){
 void levelTwo(unsigned char tilesTwo[11][15]) {
 	char i=0x00;
 	char j=0x00;
-	initTileArray(tilesTwo);
 	for(i=0;i<10;i++){
-		for(j=0+i;j<=14-i;j++){
-			if(j==7){
+		for(j=0;j<15;j++){
+			if(j!=7)
+				tilesTwo[i][j]=177;
+			else
 				tilesTwo[i][j]=176;
-			}
-			else{
-			tilesTwo[i][j]=178;
-		   	}
 	    }
+	}
+
+	for(i=0;i<10;i++){
+		for(j=i;j<15-i;j++){
+			tilesTwo[i][j]=0x00;
+		}
 	}
 	
 	for(j=0;j<15;j++){
