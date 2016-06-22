@@ -1,4 +1,4 @@
-#include "ascii.h"
+#include "ansi.h"
 #include "tri.h"
 
 void initTileArray(unsigned char tilesNumber[11][24]){

@@ -1,4 +1,4 @@
-#include "ascii.h"
+#include "ansi.h"
 #include "tri.h"
 #include "LUT.h"
 #include "board.h"
@@ -117,7 +117,7 @@ void reflectStriker(struct TVector *vector, long striker) {
 		if(vector->angle<128) {
 			vector->angle=256-vector->angle;
 		}
-		if(afstand<=4){			
+		if(afstand<=8){			
 			vector->angle+=(((256-vector->angle)>>4)*(8-afstand));
 		}
 		else{
@@ -127,7 +127,7 @@ void reflectStriker(struct TVector *vector, long striker) {
 		if((vector->angle)>(128)) {
 			vector->angle=256-vector->angle;
 		}
-		if(afstand<=4){
+		if(afstand<=8){
 			vector->angle+=((14)*(8-afstand));
 		}
 		else{
