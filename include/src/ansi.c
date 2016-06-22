@@ -114,7 +114,7 @@ void window(int x1, int y1, int x2, int y2) {
 	}
 }
 
-
+// Printer titlen "TILE CRASH"
 void title() {
 	bgcolor(7);
 	fgcolor(1);
@@ -288,6 +288,7 @@ void title() {
 	printf("%c select or proceed",254);
 }
 
+// Funktionen printer "GAME OVER" meddelelse når alle liv er tabt
 void gameOver(char life) {
 	fgcolor(1);
 	gotoxy(16,17);
@@ -302,6 +303,7 @@ void gameOver(char life) {
 	printf("  \/_____/   \/_/\/_/   \/_/  \/_/   \/_____/      \/_____/   \/_/      \/_____/   \/_/ /_/");
 }
 
+// Funktionen printer "VICTORY" meddelelse når alle tiles er ødelagt
 void victory(int points, unsigned char life, unsigned char level) {
 	int lifeScore;
 	life-=0x30;
