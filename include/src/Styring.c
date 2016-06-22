@@ -4,6 +4,9 @@
 #include "board.h"
 #include "fixpoint.h"
 
+
+/* Skifter mellem at markere de tre forskellige level-valg i menuen. 
+Knapper styrer om der gŒs op eller ned. */
 void levelControl(char readKey, char *level) {
 	fgcolor(8);
 	switch(readKey) {
@@ -38,15 +41,14 @@ void levelControl(char readKey, char *level) {
 	}
 }
 
-//initialiserer en vektor for bolden, med retning og hastighed.
-
+// Initialiserer en vektor for bolden, med retning og hastighed.
 void startBall(struct TVector *vector, char level){
 	initVector(vector,88,33,39, level);
 }
 
-/*flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et
+/* Flytter bolden med vektorens koordinater. laegger hastighedsvektoren sammen med
+stedvektoren. Derefter afrunder den og printer bolden. Inden da printes et
 mellemrum på boldens tidligere position.*/
-
 void moveBall(struct TVector *vector){
   	int x,y;
 	vector->a=vector->a+vector->x;
@@ -59,6 +61,8 @@ void moveBall(struct TVector *vector){
 	printf("%c", 'o');
   	}
 
+/* NŒr denne funktion bliver kaldt, overskriver den boldens sidste lokation med et 
+mellemrum. Dette g¿res ved at printe et mellemrum pŒ denne plads. */
 void removeBall(struct TVector *vector) {
 	int x,y;
 	x=(int) ((vector->a+0x2000)>>14);
@@ -68,9 +72,9 @@ void removeBall(struct TVector *vector) {
 	printf("%c",' ');
 }
   
-/*reflekterer bolden når den rammer murene. Hvis y koordinaten er større end 2 har den ramt en af siderne, ellers har den ramt toppen. 
+/* Reflekterer bolden når den rammer murene. Hvis y koordinaten er st¿rre end 2 
+har den ramt en af siderne, ellers har den ramt toppen. 
 Derefter inverteres enten x- eller y-koordinaten.*/
-
 void reflectBallWall(struct TVector *vector){
  	if((vector->a)<(2<<14)){
     	(vector->x)=(~(vector->x)+1);
@@ -82,6 +86,8 @@ void reflectBallWall(struct TVector *vector){
 	}
 }
 
+/* Denne funktion opdaterer strikeren ved hj¾lp af char'en. Denne er inputtet fra 
+en af knapperne. Derved bestemmes hvilke vej strikeren bev¾ger sig */ 
 void updateStriker(char c, long *striker) {
 	fgcolor(3);
 	if(c==0x01 && *striker < 104) {
@@ -99,6 +105,7 @@ void updateStriker(char c, long *striker) {
 	}
 }
 
+// Denne funktione initialiserer og printer strikeren
 void initStriker(long *striker) {
 	char i;
 	gotoxy(1,40);
@@ -111,6 +118,9 @@ void initStriker(long *striker) {
 	}
 }
 
+/* Funktionen bliver kun kaldt nŒr bolden befinder sig pŒ linjen over strikeren.
+Den vurderer derefter indfaldsvinklen i forhold til den sidste udfaldsvinkel
+fra strikeren og reflekterer i forskellige zoner bolden pŒ strikeren.*/
 void reflectStriker(struct TVector *vector, long striker) {
 	long afstand=((vector->a+0x2000)>>14)-striker;
 	if(vector->x<0) {
