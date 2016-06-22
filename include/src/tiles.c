@@ -1,6 +1,7 @@
 #include "ansi.h"
 #include "tri.h"
 
+// Initialiserer arrayet så det indeholder '\0' i alle elementer
 void initTileArray(unsigned char tilesNumber[11][15]){
 	char i,j;
 	for(i = 0x00; i < 11; i++) {
@@ -9,6 +10,8 @@ void initTileArray(unsigned char tilesNumber[11][15]){
 		}
 	}
 }
+
+// Udfylder tileArrayet med tiles hørende til levelOne
 void levelOne(unsigned char tilesOne[11][15]){
 	char i=0x00;
 	char j=0x00;
@@ -30,6 +33,7 @@ void levelOne(unsigned char tilesOne[11][15]){
 	}
 }
 
+// Udfylder tileArrayet med tiles hørende til levelTwo
 void levelTwo(unsigned char tilesTwo[11][15]) {
 	char i=0x00;
 	char j=0x00;
@@ -55,6 +59,7 @@ void levelTwo(unsigned char tilesTwo[11][15]) {
 	}
 }
 
+// Udfylder tileArrayet med tiles hørende til levelThree
 void levelThree(unsigned char tilesThree[11][15]){
 	char i=0x00;
 	char j=0x00;
@@ -75,6 +80,7 @@ void levelThree(unsigned char tilesThree[11][15]){
 	tilesThree[1][7]=219;
 }
 
+// Sørger for at kunne vælge levels i menuen
 void levelChoose(unsigned char levelArray[11][15], char level) {
 	switch(level) {
 		case 1:
@@ -89,7 +95,7 @@ void levelChoose(unsigned char levelArray[11][15], char level) {
 	}
 }
 
-
+// Funktionen tager det bestemte tileArray og printer det i konsollen
 void printLevel(unsigned char levelArray[11][15]){
 	int color[4] = {1,2,4,5};
 	char i=0x00;
@@ -126,6 +132,7 @@ void printLevel(unsigned char levelArray[11][15]){
 	}
 }
 
+// Opdaterer tileArrayet når en tile rammes. Den printer endvidere den næste tile
 void tileUpdate(unsigned char levelArray[11][15], int i, int j, int *points){
 	switch(levelArray[i][j]){
 		case 178:
@@ -153,6 +160,8 @@ void tileUpdate(unsigned char levelArray[11][15], int i, int j, int *points){
 	}
 }
 
+/* Undersøger om bolden er i er i tile området. Hvis den er undersøger den hvor den 
+befinder sig i forhold til tiles og murene */
 void tileCheck(unsigned char levelArray[11][15], struct TVector *vector, int *points) {
 	unsigned char x,y;
 	int k, l, m;
@@ -162,32 +171,40 @@ void tileCheck(unsigned char levelArray[11][15], struct TVector *vector, int *po
 	l=(x-1)>>3;
 	m=(x-3)>>3;
 	if(y==15){
-		if((levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) && (vector->y<0)) {
+		if((levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || 
+		levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) && (vector->y<0)) {
 				(vector->y)=(~(vector->y)+1);
 				tileUpdate(levelArray,y-5,k, points);
 		}
 	}
 	else if(y==3){
-			if((levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219) && (vector->y>0)){
+			if((levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || 
+			levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219) && (vector->y>0)){
 				(vector->y)=(~(vector->y)+1);
 				tileUpdate(levelArray,y-3,k, points);
 		    }
 	}
 	else{
-		if((levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) && (vector->y<0))  {
+		if((levelArray[y - 5][k]==176 || levelArray[y - 5][k]==177 || 
+		levelArray[y - 5][k]==178 || levelArray[y - 5][k]==219) && (vector->y<0))  {
 				(vector->y)=(~(vector->y)+1);
 				tileUpdate(levelArray,y-5,k, points);
 		}
-		if((levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219) && (vector->y>0)){
+		if((levelArray[y - 3][k]==176 || levelArray[y - 3][k]==177 || 
+		levelArray[y - 3][k]==178 || levelArray[y - 3][k]==219) && (vector->y>0)){
 				(vector->y)=(~(vector->y)+1);
 				tileUpdate(levelArray,y-3,k, points);  
 		}
-		if((levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219) && (vector->x>0) && x!=121){
+		if((levelArray[y - 4][l]==176 || levelArray[y - 4][l]==177 || 
+		levelArray[y - 4][l]==178 || levelArray[y - 4][l]==219) && (vector->x>0) 
+		&& x!=121){
 				(vector->x)=(~(vector->x)+1);
 				tileUpdate(levelArray,y-4,l, points);
 		}
 
-		if((levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219) && (vector->x<0) && x!=2){
+		if((levelArray[y - 4][m]==176 || levelArray[y - 4][m]==177 || 
+		levelArray[y - 4][m]==178 || levelArray[y - 4][m]==219) && (vector->x<0) 
+		&& x!=2){
 				(vector->x)=(~(vector->x)+1);
 				tileUpdate(levelArray,y-4,m, points);
 		}
