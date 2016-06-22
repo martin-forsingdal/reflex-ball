@@ -30,8 +30,8 @@ void rotate(struct TVector *v, int theta) {
 
 //Initialiserer en vektor
 void initVector(struct TVector *v, int theta, long startA, long startB, char level) {
-	(v->x) = (cos(theta+384)>>1)-(0xa00/level);
-	(v->y) = (sin(theta+384)>>1)+(0xa00/level);
+	(v->x) = (cos(theta+384)>>1)/((4-level));
+	(v->y) = (sin(theta+384)>>1)/((4-level));
 	(v->a) = (startA << 14);
 	(v->b) = (startB << 14);
 	(v->angle) = theta;
