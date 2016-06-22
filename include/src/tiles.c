@@ -35,7 +35,7 @@ void levelTwo(unsigned char tilesTwo[11][15]) {
 	char j=0x00;
 	initTileArray(tilesTwo);
 	for(i=0;i<10;i++){
-		for(j=7-i;j<=7+i;j++){
+		for(j=0+i;j<=14-i;j++){
 			if(j==7){
 				tilesTwo[i][j]=176;
 			}
