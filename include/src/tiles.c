@@ -160,7 +160,7 @@ void tileUpdate(unsigned char levelArray[11][15], int i, int j, int *points){
 	}
 }
 
-/* Undersøger om bolden er i er i tile området. Hvis den er undersøger den hvor den 
+/* Undersøger om bolden er i tile området. Hvis den er undersøger den hvor den 
 befinder sig i forhold til tiles og murene */
 void tileCheck(unsigned char levelArray[11][15], struct TVector *vector, int *points) {
 	unsigned char x,y;
