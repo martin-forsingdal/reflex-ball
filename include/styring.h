@@ -9,7 +9,7 @@
 
 void levelControl(char readKey, char *level);
 void reflectBallWall(struct TVector *vector);
-void startBall(struct TVector *vector);
+void startBall(struct TVector *vector, char level);
 void moveBall(struct TVector *vector);
 void removeBall(struct TVector *vector);
 void updateStriker(char readKey, long *striker);
