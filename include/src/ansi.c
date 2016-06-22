@@ -236,6 +236,13 @@ void title() {
 	fgcolor(9);
 	gotoxy(85,29);
 	printf("%c%c%c%c%c = 1 Health",176,176,176,176,176);
+	fgcolor(1);
+	gotoxy(20,35);
+	printf("%c%c%c%c%c%c",220,219,219,219,219,220);
+	gotoxy(20,36);
+	printf("%c%c%c%c%c%c",219,219,219,219,219,219);
+	gotoxy(20,37);
+	printf("%c%c%c%c%c%c",223,219,219,219,219,223);
 }
 
 void gameOver() {
